@@ -10,6 +10,8 @@ Gerenciar finanças pessoais de forma eficaz é um desafio comum enfrentado por 
 
 Para resolver esses desafios, um site de gestão financeira oferece uma solução abrangente e acessível. Esse tipo de plataforma online permite que os usuários controlem suas finanças de forma mais organizada e eficiente, oferecendo uma variedade de ferramentas e recursos para monitorar, planejar e otimizar seus recursos financeiros.
 
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-e1-proj-web-t2-daybyday/assets/87545086/c198a6a4-4086-45be-8cbb-a4ac0a2cdf62)
+
 
 ## Integrantes
 
