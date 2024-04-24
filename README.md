@@ -7,6 +7,7 @@
 `Eixo 01`
 
 Gerenciar finanças pessoais de forma eficaz é um desafio comum enfrentado por muitos indivíduos. A falta de controle sobre receitas, despesas e investimentos pode levar a problemas financeiros significativos, como endividamento excessivo e falta de economias, o que acarreta em maiores problemas na vida cotidiana.
+
 Para resolver esses desafios, um site de gestão financeira oferece uma solução abrangente e acessível. Esse tipo de plataforma online permite que os usuários controlem suas finanças de forma mais organizada e eficiente, oferecendo uma variedade de ferramentas e recursos para monitorar, planejar e otimizar seus recursos financeiros.
 
 
