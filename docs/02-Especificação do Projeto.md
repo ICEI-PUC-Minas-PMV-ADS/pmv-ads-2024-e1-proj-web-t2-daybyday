@@ -2,14 +2,14 @@
 
 ## Perfis de Usuário
 
-| Perfil | Descrição | Necessidades |
-|--------|-----------|--------------|
-| Jovens Profissionais Iniciantes | Gerenciar efetivamente meu primeiro salário |  |
-| Pais e Mães de Família | Equilibrar o orçamento familiar, economizar para despesas futuras e planejar para a aposentadoria. |  |
-| Autônomos e Freelancers | Aprender a controlar melhor a renda variável e administrar a instabilidade financeira |  |
-| Indivíduo enfrentando dificuldades financeiras | Soluções práticas para sair do endividamento |  |
-| Estudantes Universitários | Gerenciar o dinheiro enquanto está na faculdade e evitar acumular dívidas estudantis, além de economizar dinheiro para fins gerais |  |
-| Todos interessados em gestão financeira | Aprimorar habilidades de gestão financeira, para tomar decisões mais informadas sobre dinheiro |  |
+| Perfil | Descrição | 
+|--------|-----------|
+| Jovens Profissionais Iniciantes | Gerenciar efetivamente meu primeiro salário |
+| Pais e Mães de Família | Equilibrar o orçamento familiar, economizar para despesas futuras e planejar para a aposentadoria. |
+| Autônomos e Freelancers | Aprender a controlar melhor a renda variável e administrar a instabilidade financeira |
+| Indivíduo enfrentando dificuldades financeiras | Soluções práticas para sair do endividamento |
+| Estudantes Universitários | Gerenciar o dinheiro enquanto está na faculdade e evitar acumular dívidas estudantis, além de economizar dinheiro para fins gerais |
+| Todos interessados em gestão financeira | Aprimorar habilidades de gestão financeira, para tomar decisões mais informadas sobre dinheiro |
 
 
 ## Histórias de Usuários
