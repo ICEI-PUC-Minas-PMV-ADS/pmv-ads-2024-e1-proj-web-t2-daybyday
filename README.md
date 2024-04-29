@@ -51,4 +51,4 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 
 # Apresentação
 
-<li><a href="presentation/README.md"> Apresentação da solução do Projeto</a></li>
+<li><a href="presentation/README.md"> Apresentação da solução</a></li>
