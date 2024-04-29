@@ -14,21 +14,14 @@
 
 ## Histórias de Usuários
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
-
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+| Eu como...                      | Quero/desejo...                                                                                                                                                                           | Para...                                                                                                                                                   |
+|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Pais e Mães de Família         | Equilibrar o orçamento familiar, economizar para despesas futuras (como educação dos filhos ou aquisição de uma casa) e planejar para a aposentadoria.                                   | Preparar um fundo de emergência e garantir um futuro financeiramente estável para minha família.                                                      |
+| Jovens Profissionais Iniciantes| Gerenciar efetivamente meu primeiro salário.                                                                                                                                               | Evitar dívidas desnecessárias e começar a construir uma base financeira sólida.                                                                         |
+| Autônomos e Freelancers        | Aprender a controlar melhor minha renda variável, para administrar a instabilidade financeira e planejar investimentos para meu negócio, garantindo minha segurança financeira a longo prazo. |                                                                                                                                                           |
+| Alguém enfrentando dificuldades financeiras | Encontrar soluções práticas para sair do endividamento.                                                                                                                         | Reconstruir a saúde financeira de maneira sustentável.                                                                                                    |
+| Estudantes Universitários      | Aprender a gerenciar meu dinheiro enquanto estou na faculdade, para evitar acumular dívidas estudantis e economizar, construindo uma base financeira sólida para a vida pós-universidade.   |                                                                                                                                                           |
+| Todos interessados em gestão financeira | Aprimorar minhas habilidades de gestão financeira, para tomar decisões mais informadas sobre meu dinheiro, alcançando minhas metas financeiras e vivendo uma vida financeiramente saudável e equilibrada. | 
 
 ## Modelagem do Processo de Negócio 
 
