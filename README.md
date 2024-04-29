@@ -12,17 +12,16 @@ Para resolver esses desafios, um site de gestão financeira oferece uma soluçã
 
 ![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-e1-proj-web-t2-daybyday/assets/87545086/c198a6a4-4086-45be-8cbb-a4ac0a2cdf62)
 
-
 ## Integrantes
 
-* Rafael de Almeida Chaia Toledo
-* Felipe de Souza Montes
-* Raynan Fernandes
-* Bruno Monteiro Lima
+- Rafael de Almeida Chaia Toledo
+- Felipe de Souza Montes
+- Raynan Fernandes
+- Bruno Monteiro Lima
 
 ## Orientador
 
-* Viviâne de Almeida Tôrres
+- Viviâne de Almeida Tôrres
 
 ## Instruções de utilização
 
@@ -52,4 +51,4 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 
 # Apresentação
 
-<li><a href="presentation/README.md"> Apresentação da solução</a></li>
+<li><a href="presentation/README.md"> Apresentação da solução do Projeto</a></li>
