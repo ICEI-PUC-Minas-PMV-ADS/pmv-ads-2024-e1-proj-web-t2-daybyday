@@ -34,6 +34,7 @@ Esses objetivos visam capacitar os usuários a ter um melhor controle sobre suas
 ## Justificativa
 
 É amplamente reconhecido que uma parcela significativa da população brasileira enfrenta desafios críticos relacionados à gestão financeira em seu cotidiano. De acordo com uma pesquisa recente, 76% das famílias no Brasil estão enfrentando algum grau de endividamento. Concomitantemente, a falta de educação financeira emerge como um dos principais fatores contribuintes para essa realidade preocupante. Um estudo adicional revelou que 90% dos entrevistados brasileiros expressaram uma necessidade urgente de educação financeira.
+
 Essa conjunção de fatores, aliada à falta de transparência nas finanças pessoais, tanto no que diz respeito às receitas quanto aos gastos mensais e diários, frequentemente conduz os indivíduos a uma situação de colapso financeiro. O resultado pode ser o acúmulo de dívidas excessivas e, em alguns casos, a adoção de medidas desesperadas que exacerbam os problemas financeiros, em vez de resolvê-los.
 Muitas vezes, esse problema transcende o contexto puramente financeiro e acaba interferindo significativamente na vida pessoal das pessoas, desencadeando um ciclo vicioso. Problemas financeiros podem gerar estresse e conflitos pessoais, os quais, por sua vez, tendem a agravar ainda mais os problemas financeiros.
 
@@ -43,13 +44,12 @@ transparência financeira e a capacidade deidentificar precisamente a origem de 
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
-
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+O público-alvo deste site de gestão financeira seria composto por indivíduos e famílias que buscam melhorar sua saúde financeira e encontrar soluções práticas para lidar com desafios financeiros. Este público pode ser definido da seguinte forma:
+1. Jovens Profissionais Iniciantes: Recém-formados ou jovens profissionais que estão ingressando no mercado de trabalho e desejam aprender a gerenciar efetivamente seu primeiro salário, evitar dívidas desnecessárias e começar a construir uma base financeira sólida.
+2. Pais e Mães de Família: Famílias que procuram maneiras de equilibrar o orçamento familiar, economizar para despesas futuras (como educação dos filhos ou aquisição de uma casa) e planejar para a aposentadoria.
+3. Autônomos e Freelancers: Profissionais que têm renda variável e desejam controlar melhor suas finanças, lidar com a instabilidade financeira e aprender a administrar seus negócios de forma mais eficaz.
+4. Indivíduos com Dificuldades Financeiras: Pessoas que estão enfrentando problemas de endividamento, falta de controle sobre gastos ou que precisam de ajuda para sair de situações financeiras adversas.
+5. Estudantes Universitários: Estudantes universitários que desejam aprender a gerenciar suas finanças enquanto estão na faculdade e se preparar para a vida após a formatura.
+6. Todos Interessados em Educação Financeira: Qualquer pessoa que tenha interesse em aprender mais sobre educação financeira e melhorar suas habilidades de gestão financeira.
+O público-alvo deste site seria diversificado, abrangendo uma ampla faixa etária e
+diferentes contextos de vida, mas unido pelo desejo comum de fortalecer sua compreensão financeira e alcançar maior estabilidade financeira e bem-estar geral.
