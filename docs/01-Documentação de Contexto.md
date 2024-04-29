@@ -33,12 +33,13 @@ Esses objetivos visam capacitar os usuários a ter um melhor controle sobre suas
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+É amplamente reconhecido que uma parcela significativa da população brasileira enfrenta desafios críticos relacionados à gestão financeira em seu cotidiano. De acordo com uma pesquisa recente, 76% das famílias no Brasil estão enfrentando algum grau de endividamento. Concomitantemente, a falta de educação financeira emerge como um dos principais fatores contribuintes para essa realidade preocupante. Um estudo adicional revelou que 90% dos entrevistados brasileiros expressaram uma necessidade urgente de educação financeira.
+Essa conjunção de fatores, aliada à falta de transparência nas finanças pessoais, tanto no que diz respeito às receitas quanto aos gastos mensais e diários, frequentemente conduz os indivíduos a uma situação de colapso financeiro. O resultado pode ser o acúmulo de dívidas excessivas e, em alguns casos, a adoção de medidas desesperadas que exacerbam os problemas financeiros, em vez de resolvê-los.
+Muitas vezes, esse problema transcende o contexto puramente financeiro e acaba interferindo significativamente na vida pessoal das pessoas, desencadeando um ciclo vicioso. Problemas financeiros podem gerar estresse e conflitos pessoais, os quais, por sua vez, tendem a agravar ainda mais os problemas financeiros.
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+O presente projeto visa abordar essa questão oferecendo aos usuários uma maior
+transparência financeira e a capacidade deidentificar precisamente a origem de seus desafios financeiros. Além de fornecer suporte para aqueles que já enfrentam problemas financeiros, nossa iniciativa também pretende prevenir tais problemas por meio de uma abordagem educacional e de controle proativa. Este site não apenas auxiliará aqueles que estão em dificuldades financeiras, mas também promoverá a conscientização e a adoção de práticas financeiras saudáveis, contribuindo para a prevenção de situações adversas no futuro.
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 ## Público-Alvo
 
