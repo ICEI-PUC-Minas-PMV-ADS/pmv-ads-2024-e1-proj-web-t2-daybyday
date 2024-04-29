@@ -13,17 +13,9 @@ Um problema comum de má gestão financeira pessoal é a falta de controle e con
  7. Falta de Planejamento de Longo Prazo: Sem uma gestão financeira eficaz, é difícil estabelecer e alcançar metas de longo prazo, como comprar uma casa, pagar a educação dos filhos ou se aposentar confortavelmente.
 
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
-
 ## Objetivos
 
 Os objetivos de um aplicativo de gestão financeira para resolver os problemas associados à má gestão financeira pessoal incluiriam:
-
 
 1. Organização Financeira: Permitir que os usuários organizem todas as suas transações financeiras em um só lugar, categorizando receitas e despesas de forma clara e acessível.
 2. Estabelecimento de Orçamento: Facilitar a criação e o acompanhamento de um orçamento personalizado, com base na renda e nos objetivos financeiros específicos de cada usuário.
@@ -38,8 +30,6 @@ Os objetivos de um aplicativo de gestão financeira para resolver os problemas a
  
 Esses objetivos visam capacitar os usuários a ter um melhor controle sobre suas finanças, promovendo a conscientização e a responsabilidade financeira para alcançar uma estabilidade financeira sustentável e melhorar sua qualidade de vida global.
 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
 
 ## Justificativa
 
