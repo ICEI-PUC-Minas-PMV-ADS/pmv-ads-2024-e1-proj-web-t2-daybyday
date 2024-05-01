@@ -74,8 +74,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RNF-001 | Validação de senha no cadastro: A senha deve seguir as diretrizes de segurança estabelecidas, incluindo a exigência de pelo menos 8 caracteres, com pelo menos uma letra maiúscula, uma letra minúscula, um número e um caractere especial. | ALTA       |
 | RNF-002 | Confiabilidade: Os alertas de despesas próximas ou excedentes devem ser enviados aos usuários dentro de 1 hora após a violação do limite de gastos, com uma taxa de entrega de 80%.                                                         | MÉDIA      |
 | RNF-003 | Performance de Relatórios: A geração de relatórios de análise de gastos deve ser concluída em menos de 6 segundos, mesmo ao processar dados de transações financeiras de um período de um ano.                                              | MÉDIA      |
-| RNF-004 | Disponibilidade: ● O sistema de alertas deve estar disponível 20 horas por dia, 7 dias por semana, com uma taxa de disponibilidade mínima de 90%.                                                                                           | MÉDIA      |
-| RNF-005 | Compatibilidade Multiplataforma: ● O site deve ser responsivo e adaptar sua estilização automaticamente a diferentes dispositivos, incluindo smartphones, tablets e desktops.                                                               | BAIXA      |
+| RNF-004 | Disponibilidade: O sistema de alertas deve estar disponível 20 horas por dia, 7 dias por semana, com uma taxa de disponibilidade mínima de 90%.                                                                                             | MÉDIA      |
+| RNF-005 | Compatibilidade Multiplataforma: O site deve ser responsivo e adaptar sua estilização automaticamente a diferentes dispositivos, incluindo smartphones, tablets e desktops.                                                                 | BAIXA      |
 
 ## Restrições
 
