@@ -24,7 +24,20 @@ A equipe está utilizando o GitHub para organização e estruturação das taref
   <li>Done: nesta lista são adicionadas as tarefas finalizadas e as que passaram pelos testes e controle de qualidade, prontas para serem entregues aos usuários.</li>
  </ul>
 
+### Etiquetas
 
+As tarefas são etiquetadas em função da propriedade da atividade e seguem o seguinte esquema de cores/categorias:
+
+<ul>
+  <li>Bug (Erro no código)</li>
+  <li>Desenvolvimento (Development)</li>
+  <li>Documentação (Documentation)</li>
+  <li>Gerência de Projetos (Project Management)</li>
+  <li>Infraestrutura (Infrastructure)</li>
+  <li>Testes (Tests)</li>
+</ul>
+
+<img src="https://user-images.githubusercontent.com/100447878/164068979-9eed46e1-9b44-461e-ab88-c2388e6767a1.png">
 
 ### Ferramentas
 
