@@ -46,3 +46,4 @@
 | RNF-004 | Disponibilidade: O sistema de alertas deve estar disponível 20 horas por dia, 7 dias por semana, com uma taxa de disponibilidade mínima de 90%.                                                                                             | MÉDIA      |
 | RNF-005 | Compatibilidade Multiplataforma: O site deve ser responsivo e adaptar sua estilização automaticamente a diferentes dispositivos, incluindo smartphones, tablets e desktops.                                                                 | BAIXA      |
 
+**Prioridade: Alta / Média / Baixa.
