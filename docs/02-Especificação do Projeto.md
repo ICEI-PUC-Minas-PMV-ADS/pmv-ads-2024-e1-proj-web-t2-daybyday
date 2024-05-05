@@ -34,6 +34,8 @@
 | RNF-009 | Permitir receber alertas de conta próximas do vencimento/vencidas | MÉDIA      |
 | RNF-010 | Permitir personalizar metas financeiras                           | BAIXA      |
 
+**Prioridade: Alta / Média / Baixa.
+
 ### Requisitos não Funcionais
 
 | ID      | Descrição do Requisito                                                                                                                                                                                                                      | Prioridade |
