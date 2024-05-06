@@ -30,6 +30,8 @@ body {
 form {
     display: flex;
     flex-direction: column;
+    border: 2px solid var(--title-color);
+    padding: 40px 80px;
 }
 
 input {
@@ -40,38 +42,53 @@ input {
 }
 
 button {
-    padding: 15px 25px;
-    margin-left: 50px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Larger text */
-    color: var(--main-bg-color);
-    background-color: var(--title-color);
+    border-radius: 8px;
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all 0.35s;
+  }
+  
+  button span {
+    position: relative;
+    z-index: 2;
+  }
+  
+  button:after {
     cursor: pointer;
-    transition: all 0.3s ease; /* Smooth transition for all changes */
-    text-decoration: none; /* Remove underline */
-    width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    border-radius: 6px;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--title-color);
+    transition: all 0.35s;
+  }
+  
+  button:hover {
+    color: #fff;
+  }
+  
+  button:hover:after {
+    width: 100%;
+  }
 
-button:hover {
-    background-color: var(--text-color);
-    transform: scale(1.05); /* Slightly enlarge the button */
-}
-
-button:active {
-    transform: scale(0.95); /* Slightly shrink the button when clicked */
-}
-
-button:focus {
-    outline: none; /* Remove outline when button is focused */
-}
-
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    width: 200px; /* Adjust as needed */
+.button-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 60px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
