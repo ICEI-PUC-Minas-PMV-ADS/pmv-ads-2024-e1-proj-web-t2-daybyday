@@ -2,11 +2,12 @@
 
 ## Gerenciamento de Projeto
 
-A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento.
+A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. Ele permite que as equipes respondam rapidamente às mudanças e entreguem continuamente valor ao cliente.
+
 
 ### Divisão de Papéis
 
-A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
+A divisão de papéis do grupo baseada na divisão do SCRUM (Scrum Master, Product Owner e Equipe de Desenvolvimento) ficou da seguinte forma:
 
 - Scrum Master: Bruno Monteiro Lima.
 - Product Owner: Fellipe de Souza Montes.
@@ -18,10 +19,10 @@ A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para def
 A equipe está utilizando o GitHub para organização e estruturação das tarefas do projeto, com as seguintes listas:
 
 <ul>
-  <li>Product Backlog: recebe as tarefas a serem trabalhadas e representa o Backlog do produto. Todas as atividades identificadas no decorrer do projeto são adicionadas a esta lista.</li>
-  <li>To Do: esta lista representa o Sprint Backlog que está sendo trabalhado.</li>
-  <li>In progress: lista das tarefas iniciadas.</li>
-  <li>Done: nesta lista são adicionadas as tarefas finalizadas e as que passaram pelos testes e controle de qualidade, prontas para serem entregues aos usuários.</li>
+  <li>Product Backlog: Recebe as tarefas a serem trabalhadas e representa o Backlog do produto. Todas as atividades identificadas no decorrer do projeto são adicionadas a esta lista.</li>
+  <li>To Do: Esta lista representa o Sprint Backlog que está sendo trabalhado.</li>
+  <li>In progress: Lista das tarefas iniciadas.</li>
+  <li>Done: Nesta lista são adicionadas as tarefas finalizadas e as que passaram pelos testes e controle de qualidade, prontas para serem entregues aos usuários.</li>
  </ul>
 
 ### Etiquetas
@@ -37,7 +38,10 @@ As tarefas são etiquetadas em função da propriedade da atividade e seguem o s
   <li>Testes (Tests)</li>
 </ul>
 
-<img src="https://user-images.githubusercontent.com/100447878/164068979-9eed46e1-9b44-461e-ab88-c2388e6767a1.png">
+<figure> 
+  <img src="https://user-images.githubusercontent.com/100447878/164068979-9eed46e1-9b44-461e-ab88-c2388e6767a1.png">
+    <figcaption>Figura  02-  Esquema de cores e categorias utilizadas</figcaption>
+</figure>
 
 ### Ferramentas
 
