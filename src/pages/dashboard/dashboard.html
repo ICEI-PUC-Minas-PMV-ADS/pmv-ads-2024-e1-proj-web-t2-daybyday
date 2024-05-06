@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboad</title>
+    <title>Financial Transactions</title>
+    <link rel="stylesheet" type="text/css" href="dashboard.css">
 </head>
+
 <body>
-    <h1>Welcome to Your Personal Page</h1>
+    <div class="container">
+        <h2>Financial Transactions</h2>
+        <button onclick="togglePopup()">Add Transaction</button>
+        <table id="transactionTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="transactionList"></tbody>
+        </table>
+    </div>
+
+    <div id="popup" class="popup">
+        <h3>Enter Transaction Details</h3>
+        <input type="text" id="transactionName" placeholder="Transaction Name">
+        <input type="number" id="transactionValue" placeholder="Transaction Value">
+        <button onclick="addTransaction()">Add</button>
+    </div>
+
+    <script src="dashboard.js"></script>
 </body>
+
 </html>
