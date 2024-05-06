@@ -87,3 +87,19 @@ th {
 .container {
     position: relative;
 }
+
+.sums-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sums-container > div {
+    margin-right: 20px;
+}
+
+.total-sum,
+.negative-sum,
+.positive-sum {
+    margin-bottom: 10px;
+}
