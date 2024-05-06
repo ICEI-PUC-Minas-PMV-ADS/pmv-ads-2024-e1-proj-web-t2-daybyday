@@ -1,37 +1,49 @@
-
+// Function to toggle popup visibility
 function togglePopup() {
     var popup = document.getElementById("popup");
+    var overlay = document.getElementById("overlay");
+
     if (popup.style.display === "block") {
         popup.style.display = "none";
+        overlay.style.display = "none";
     } else {
         popup.style.display = "block";
+        overlay.style.display = "block";
     }
 }
 
+// Function to add transaction
 function addTransaction() {
     var transactionName = document.getElementById("transactionName").value.trim();
     var transactionValue = document.getElementById("transactionValue").value.trim();
 
+    // Validate if transaction name and value are not empty
     if (transactionName !== "" && transactionValue !== "") {
         var transaction = {
             name: transactionName,
             value: parseFloat(transactionValue)
         };
 
+        // Create table row
         var table = document.getElementById("transactionList");
         var row = table.insertRow();
         var nameCell = row.insertCell(0);
         var valueCell = row.insertCell(1);
-        var actionCell = row.insertCell(2);
 
         nameCell.textContent = transaction.name;
+        nameCell.setAttribute("contenteditable", "true");
+        nameCell.addEventListener("blur", function() {
+            updateTransactionName(this.textContent, row.rowIndex);
+        });
         valueCell.textContent = transaction.value.toFixed(2);
-        actionCell.innerHTML = '<button class="delete-btn" onclick="deleteTransaction(this)">Delete</button>';
 
+        // Save transaction to local storage
         saveTransaction(transaction);
 
+        // Close the popup
         togglePopup();
 
+        // Clear input fields
         document.getElementById("transactionName").value = "";
         document.getElementById("transactionValue").value = "";
     } else {
@@ -39,24 +51,21 @@ function addTransaction() {
     }
 }
 
+// Function to save transaction to local storage
 function saveTransaction(transaction) {
     var transactions = JSON.parse(localStorage.getItem("transactions")) || [];
     transactions.push(transaction);
     localStorage.setItem("transactions", JSON.stringify(transactions));
 }
 
-function deleteTransaction(element) {
-    var row = element.parentNode.parentNode;
-    var index = row.rowIndex;
+// Function to update transaction name
+function updateTransactionName(newName, index) {
     var transactions = JSON.parse(localStorage.getItem("transactions"));
-
-    transactions.splice(index - 1, 1);
-
+    transactions[index - 1].name = newName;
     localStorage.setItem("transactions", JSON.stringify(transactions));
-
-    row.parentNode.removeChild(row);
 }
 
+// Function to load transactions from local storage
 function loadTransactions() {
     var transactions = JSON.parse(localStorage.getItem("transactions")) || [];
     var table = document.getElementById("transactionList");
@@ -65,12 +74,15 @@ function loadTransactions() {
         var row = table.insertRow();
         var nameCell = row.insertCell(0);
         var valueCell = row.insertCell(1);
-        var actionCell = row.insertCell(2);
 
         nameCell.textContent = transaction.name;
+        nameCell.setAttribute("contenteditable", "true");
+        nameCell.addEventListener("blur", function() {
+            updateTransactionName(this.textContent, row.rowIndex);
+        });
         valueCell.textContent = transaction.value.toFixed(2);
-        actionCell.innerHTML = '<button class="delete-btn" onclick="deleteTransaction(this)">Delete</button>';
     });
 }
 
+// Load transactions when the page loads
 window.onload = loadTransactions;

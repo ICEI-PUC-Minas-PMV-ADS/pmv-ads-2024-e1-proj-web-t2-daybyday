@@ -46,19 +46,6 @@ th {
     background-color: #f2f2f2;
 }
 
-.delete-btn {
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.delete-btn:hover {
-    background-color: #c82333;
-}
-
 .popup {
     display: none;
     position: fixed;
@@ -73,13 +60,41 @@ th {
 
 .popup input[type="text"],
 .popup input[type="number"] {
-    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.popup button {
-    margin-top: 10px;
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.container {
+    position: relative; /* Make sure the container is a stacking context */
 }
