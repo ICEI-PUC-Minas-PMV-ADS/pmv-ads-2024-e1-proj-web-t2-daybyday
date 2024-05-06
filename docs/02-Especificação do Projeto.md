@@ -29,34 +29,34 @@
         <th>Para... (Objetivo)</th>
     </tr>
     <tr>
-        <td>Pais e Mães de Família</td>
-        <td>Quero ter acesso a uma plataforma para me ajudar a manter o foco durante os estudos.</td>
-        <td>Melhorar minha concentração e produtividade enquanto reviso provas ou trabalho em projetos acadêmicos.</td>
+        <td>Pais e Mães de Família </td>
+        <td>Quero cadastrar minha conta. </td>
+        <td>Organizar as finanças e garantir um futuro financeiramento estável para minha família. </td>
     </tr>
     <tr>
-        <td>Jovens Profissionais Iniciantes</td>
-        <td>Quero um cronômetro simples e eficaz para gerenciar meu tempo de estudo e pausas.</td>
-        <td>Evitar a exaustão mental e manter um ritmo consistente de aprendizado.</td>
+        <td>Jovens Profissionais Iniciantes </td>
+        <td>Quero logar na minha conta cadastrada e registrar transações financeiras. </td>
+        <td>Evitar exceder minhas despesas. </td>
     </tr>
     <tr>
-        <td>Autônomos e Freelancers</td>
-        <td>Desejo recomendar uma ferramenta aos meus alunos que os ajude a manter o foco e a produtividade durante os estudos.</td>
-        <td>Contribuir para o sucesso acadêmico dos meus alunos e incentivá-los a adotar boas práticas de estudo.</td>
+        <td>Autônomos e Freelancers </td>
+        <td>Quero categorizar minhas transações financeiras e definir orçamento mensal. </td>
+        <td>Para lidar com a instabilidade e garantir minha segurança financeira a longo prazo</td>
     </tr>
     <tr>
-        <td>Alguém enfrentando dificuldades financeiras</td>
-        <td>Quero um ambiente digital que me ajude a planejar os estudos e a manter a concentração enquanto aprende novas habilidades.</td>
-        <td>Aproveitar ao máximo a minha rotina e o meu tempo de estudo para alcançar meus objetivos de autodesenvolvimento.</td>
+        <td>Alguém enfrentando dificuldades financeiras </td>
+        <td>Quero receber alertas personalizados com meu orçmento mensal. </td>
+        <td>Para encontrar soluções práticas e sair do endividamento. </td>
     </tr>
       <tr>
         <td>Estudantes Universitários </td>
-        <td>Desejo uma ferramenta que motive meus filhos a estudar de forma mais eficiente e saudável.</td>
-        <td>Apoiar o progresso acadêmico dos meus filhos e promover um ambiente de estudo positivo em casa.</td>
+        <td>Quero visualizar meus gastos e cadastrar contas a pagar. </td>
+        <td>Para formar-me com segurança financeira e enfrentar o futuro com confiança. </td>
     </tr>
         <tr>
         <td>Todos interessados em gestão financeira </td>
-        <td>Desejo uma ferramenta que motive meus filhos a estudar de forma mais eficiente e saudável.</td>
-        <td>Apoiar o progresso acadêmico dos meus filhos e promover um ambiente de estudo positivo em casa.</td>
+        <td>Quero receber alertas de conta próximas do vencimento/vencidas e personalizar metas financeiras. </td>
+        <td>Para alcançar uma vida financeiramente saudável e equilibrada.</td>
 </table>
 
 
