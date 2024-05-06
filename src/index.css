@@ -45,6 +45,7 @@ img {
 }
 
 a {
+  cursor: pointer;
   display: block;
   width: 200px;
   height: 40px;

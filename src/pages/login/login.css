@@ -10,7 +10,7 @@ body {
     background-color: var(--main-bg-color);
 }
 
-.loginContainer {
+.login-container {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -29,6 +29,8 @@ body {
 form {
     display: flex;
     flex-direction: column;
+    border: 2px solid var(--title-color);
+    padding: 40px 80px;
 }
 
 input {
@@ -38,39 +40,58 @@ input {
     border-radius: 8px;
 }
 
+img {
+    width: 300px;
+}
+
 button {
-    padding: 15px 25px;
-    margin-left: 50px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Larger text */
-    color: var(--main-bg-color);
-    background-color: var(--title-color);
-    cursor: pointer;
-    transition: all 0.3s ease; /* Smooth transition for all changes */
-    text-decoration: none; /* Remove underline */
-    width: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-button:hover, .signUpButton:hover {
-    background-color: var(--text-color);
-    transform: scale(1.05);
-}
-
-button:active, .signUpButton:active {
-    transform: scale(0.95);
-}
-
-button:focus, .signUpButton:focus {
-    outline: none;
-}
-
-.button-container {
-    display: flex;
-    justify-content: space-between;
+    border-radius: 8px;
+    display: block;
     width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all 0.35s;
+  }
+  
+  button span {
+    position: relative;
+    z-index: 2;
+  }
+  
+  button:after {
+    cursor: pointer;
+    border-radius: 6px;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--title-color);
+    transition: all 0.35s;
+  }
+  
+  button:hover {
+    color: #fff;
+  }
+  
+  button:hover:after {
+    width: 100%;
+  }
+
+.button-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 60px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
