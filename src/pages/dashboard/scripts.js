@@ -78,11 +78,25 @@ function displayTransactions(transactionsToShow = transactions) {
 
 function calculateTotalValue(transactionsToCalculate = transactions) {
     const totalValueElement = document.getElementById("totalValue");
+    const negativeTotalElement = document.getElementById("negativeTotal");
+    const positiveTotalElement = document.getElementById("positiveTotal");
+
     let total = 0;
+    let negativeTotal = 0;
+    let positiveTotal = 0;
+
     transactionsToCalculate.forEach(transaction => {
         total += transaction.value;
+        if (transaction.value < 0) {
+            negativeTotal += transaction.value;
+        } else if (transaction.value > 0) {
+            positiveTotal += transaction.value;
+        }
     });
+
     totalValueElement.textContent = total.toFixed(2);
+    negativeTotalElement.textContent = negativeTotal.toFixed(2);
+    positiveTotalElement.textContent = positiveTotal.toFixed(2);
 }
 
 function filterTransactions() {
