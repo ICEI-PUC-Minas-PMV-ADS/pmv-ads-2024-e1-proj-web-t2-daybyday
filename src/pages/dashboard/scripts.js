@@ -114,10 +114,12 @@ function updateFilterOptions() {
     filterSelect.appendChild(allOption);
     
     uniqueTags.forEach(tag => {
-        const option = document.createElement("option");
-        option.value = tag;
-        option.textContent = tag;
-        filterSelect.appendChild(option);
+        if (tag !== "") {
+            const option = document.createElement("option");
+            option.value = tag;
+            option.textContent = tag;
+            filterSelect.appendChild(option);
+        }
     });
 }
 
