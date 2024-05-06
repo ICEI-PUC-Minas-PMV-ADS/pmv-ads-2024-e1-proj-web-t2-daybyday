@@ -1,0 +1,86 @@
+:root {
+  --main-bg-color: #0e1c33;
+  --main-font: Arial, sans-serif;
+  --title-color: rgb(234, 138, 172);
+  --text-color: white;
+}
+
+body {
+  font-family: var(--main-font);
+  background-color: var(--main-bg-color);
+}
+
+h1 {
+  font-size: 24px;
+  color: var(--title-color);
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+  gap: 60px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  width: 650px;
+}
+
+a {
+  cursor: pointer;
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all 0.35s;
+}
+
+a span {
+  position: relative;
+  z-index: 2;
+}
+
+a:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--title-color);
+  transition: all 0.35s;
+}
+
+a:hover {
+  color: #fff;
+}
+
+a:hover:after {
+  width: 100%;
+}

@@ -1,0 +1,97 @@
+:root {
+    --main-bg-color: #0e1c33;
+    --main-font: Arial, sans-serif;
+    --title-color: rgb(234, 138, 172);
+    --text-color: white;
+}
+
+body {
+    font-family: var(--main-font);
+    background-color: var(--main-bg-color);
+}
+
+.login-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.loginTitle {
+    font-size: 24px;
+    color: var(--title-color);
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--title-color);
+    padding: 40px 80px;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+img {
+    width: 300px;
+}
+
+button {
+    border-radius: 8px;
+    display: block;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all 0.35s;
+  }
+  
+  button span {
+    position: relative;
+    z-index: 2;
+  }
+  
+  button:after {
+    cursor: pointer;
+    border-radius: 6px;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--title-color);
+    transition: all 0.35s;
+  }
+  
+  button:hover {
+    color: #fff;
+  }
+  
+  button:hover:after {
+    width: 100%;
+  }
+
+.button-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 60px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
