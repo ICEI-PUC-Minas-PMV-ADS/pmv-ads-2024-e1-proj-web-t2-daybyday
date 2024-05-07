@@ -30,6 +30,7 @@ function addTransaction() {
     calculateTotalValue();
     nameInput.value = "";
     valueInput.value = "";
+    togglePopup();
 }
 
 function editTransaction(index) {
