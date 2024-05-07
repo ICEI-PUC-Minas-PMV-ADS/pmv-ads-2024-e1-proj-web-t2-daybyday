@@ -56,6 +56,7 @@ th {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
 }
 
 .popup input[type="text"],
@@ -76,18 +77,6 @@ th {
     z-index: 99;
 }
 
-.popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-}
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -96,5 +85,21 @@ th {
 }
 
 .container {
-    position: relative; /* Make sure the container is a stacking context */
+    position: relative;
+}
+
+.sums-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sums-container > div {
+    margin-right: 20px;
+}
+
+.total-sum,
+.negative-sum,
+.positive-sum {
+    margin-bottom: 10px;
 }

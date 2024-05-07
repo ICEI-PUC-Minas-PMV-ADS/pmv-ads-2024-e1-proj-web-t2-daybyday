@@ -1,41 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Financial Transactions</title>
-<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Transactions</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <h2>Financial Transactions</h2>
-        <button onclick="togglePopup()">Add Transaction</button>
+    <div class="container">
+        <div class="header">
+            <h2>Financial Transactions</h2>
+            <button onclick="togglePopup()">Add Transaction</button>
+            <select id="filterSelect">
+                <option value="all">All Transactions</option>
+            </select>
+            <button onclick="filterTransactions()">Filter</button>
+        </div>
+        <table id="transactionTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                    <th>Tags</th>
+                </tr>
+            </thead>
+            <tbody id="transactionList"></tbody>
+        </table>
+        <div class="sums-container">
+            <div>Total Value: <span id="totalValue">0</span></div>
+            <div>Negative Total: <span id="negativeTotal">0</span></div>
+            <div>Positive Total: <span id="positiveTotal">0</span></div>
+        </div>
     </div>
-    <table id="transactionTable">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Value</th>
-            </tr>
-        </thead>
-        <tbody id="transactionList"></tbody>
-    </table>
-    <div>Total Value: <span id="totalValue">0</span></div>
-</div>
 
-<div id="overlay" class="overlay" style="display: none;"></div>
+    <div id="overlay" class="overlay" style="display: none;"></div>
 
-<div id="popup" class="popup" style="display: none;">
-    <div class="header">
-        <h3>Enter Transaction Details</h3>
-        <button class="close-btn" onclick="togglePopup()">X</button>
+    <div id="popup" class="popup" style="display: none;">
+        <div class="header">
+            <h3>Enter Transaction Details</h3>
+            <button class="close-btn" onclick="togglePopup()">X</button>
+        </div>
+        <input type="text" id="transactionName" placeholder="Transaction Name">
+        <input type="number" id="transactionValue" placeholder="Transaction Value">
+        <input type="text" id="transactionTags" placeholder="Transaction Tags">
+        <button onclick="addTransaction()">Add</button>
     </div>
-    <input type="text" id="transactionName" placeholder="Transaction Name">
-    <input type="number" id="transactionValue" placeholder="Transaction Value">
-    <button onclick="addTransaction()">Add</button>
-</div>
 
-<script src="scripts.js"></script>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
