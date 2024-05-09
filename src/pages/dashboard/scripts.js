@@ -145,7 +145,7 @@ function getUniqueTags() {
 
 updateFilterOptions();
 
-document.getElementById('logout-btn').addEventListener('click', function() {
+document.getElementById('logoutButton').addEventListener('click', function() {
     localStorage.clear();
-    window.location.href="http://127.0.0.1:5500/src/pages/login/login.html";
+    window.location.href="/src/pages/login/login.html";
 })
