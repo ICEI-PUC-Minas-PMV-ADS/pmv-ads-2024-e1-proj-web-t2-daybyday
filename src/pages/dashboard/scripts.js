@@ -34,6 +34,7 @@ function addTransaction() {
     tagsInput.value = ""; 
     
     updateFilterOptions();
+    togglePopup();
 }
 
 function editTransaction(index) {
