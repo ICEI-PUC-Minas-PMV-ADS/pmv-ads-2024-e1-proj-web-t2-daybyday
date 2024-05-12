@@ -57,6 +57,6 @@ O editor de código foi escolhido porque ele possui uma integração com o siste
 |--------------------|--------------------------------------------------------------------------------|----------------------------------------|
 |Repositório de código fonte | GitHub | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-e1-proj-web-t2-daybyday/blob/main/src/README.md |
 |Documentos do projeto  | GitHub | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-e1-proj-web-t2-daybyday |
-|Projeto de interface e wireframes | Figma |  |
+|Projeto de interface e wireframes | Figma | https://www.figma.com/ |
 |Gerenciamento do projeto  | GitHub | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/1083 |
 
