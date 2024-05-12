@@ -35,28 +35,49 @@
     </tr>
     <tr>
         <td>Jovens Profissionais Iniciantes </td>
-        <td>Quero logar na minha conta cadastrada e registrar transações financeiras. </td>
+        <td>Quero logar na minha conta cadastrada. </td>
         <td>Evitar exceder minhas despesas. </td>
     </tr>
     <tr>
         <td>Autônomos e Freelancers </td>
-        <td>Quero categorizar minhas transações financeiras e definir orçamento mensal. </td>
+        <td>Quero registrar transações financeiras. </td>
         <td>Para lidar com a instabilidade e garantir minha segurança financeira a longo prazo</td>
     </tr>
     <tr>
         <td>Alguém enfrentando dificuldades financeiras </td>
-        <td>Quero receber alertas personalizados com meu orçmento mensal. </td>
+        <td>Quero categorizar minhas transações financeiras. </td>
         <td>Para encontrar soluções práticas e sair do endividamento. </td>
     </tr>
-      <tr>
+    <tr>
         <td>Estudantes Universitários </td>
-        <td>Quero visualizar meus gastos e cadastrar contas a pagar. </td>
+        <td>Quero definir meu orçamento mensal. </td>
         <td>Para formar-me com segurança financeira e enfrentar o futuro com confiança. </td>
     </tr>
-        <tr>
+    <tr>
         <td>Todos interessados em gestão financeira </td>
-        <td>Quero receber alertas de conta próximas do vencimento/vencidas e personalizar metas financeiras. </td>
-        <td>Para alcançar uma vida financeiramente saudável e equilibrada.</td>
+        <td>Quero receber alertas personalizados com o orçamento mensal. </td>
+        <td>Para alcançar uma vida financeiramente saudável e equilibrada. </td>
+    </tr>
+    <tr>
+        <td>Pais e Mães de Família </td>
+        <td>Quero visualizar meus gastos. </td>
+        <td>Para controlar meu custo mensal. </td>
+    </tr>
+    <tr>
+        <td>Autônomos e Freelancers </td>
+        <td>Quero cadastrar contas a pagar. </td>
+        <td>Para ter controle sobre as contas. </td>
+    </tr>
+    <tr>
+        <td>Alguém enfrentando dificuldades financeiras </td>
+        <td>Quero receber alertas de conta próximas do vencimento/vencidas. </td>
+        <td>Para não perder o prazo das contas a pagar. </td>
+    </tr>
+    <tr>
+        <td>Estudantes Universitários </td>
+        <td>Quero personalizar metas financeiras. </td>
+        <td>Para projetar um futuro meçhor. </td>
+    </tr>
 </table>
 
 
