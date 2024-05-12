@@ -41,7 +41,7 @@
     <tr>
         <td>Autônomos e Freelancers </td>
         <td>Quero registrar transações financeiras. </td>
-        <td>Para lidar com a instabilidade e garantir minha segurança financeira a longo prazo</td>
+        <td>Para lidar com a instabilidade e garantir minha segurança financeira a longo prazo. </td>
     </tr>
     <tr>
         <td>Alguém enfrentando dificuldades financeiras </td>
