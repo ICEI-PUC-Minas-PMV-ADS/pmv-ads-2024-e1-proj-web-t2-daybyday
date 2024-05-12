@@ -76,7 +76,7 @@
     <tr>
         <td>Estudantes Universitários </td>
         <td>Quero personalizar metas financeiras. </td>
-        <td>Para projetar um futuro meçhor. </td>
+        <td>Para projetar um futuro melhor. </td>
     </tr>
 </table>
 
