@@ -25,6 +25,13 @@ A equipe está utilizando o GitHub para organização e estruturação das taref
   <li>Done: Nesta lista são adicionadas as tarefas finalizadas e as que passaram pelos testes e controle de qualidade, prontas para serem entregues aos usuários.</li>
  </ul>
 
+O quadro kanban do grupo no GitHub está disponível no link https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/1083 e é apresentado, na figura abaixo:
+
+<figure>
+    <img src="img/quadroKanban.png">
+    <figcaption> Figura 1 - Tela do kanban do GitHub</figcaption>
+</figure>
+
 ### Etiquetas
 
 As tarefas são etiquetadas em função da propriedade da atividade e seguem o seguinte esquema de cores/categorias:
