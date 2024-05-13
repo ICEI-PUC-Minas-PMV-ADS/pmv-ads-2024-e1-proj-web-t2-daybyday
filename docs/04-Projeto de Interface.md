@@ -7,7 +7,7 @@ O User Flow cria o caminho que o usuário percorre ao interagir com telas do sis
 
 <div align="center">
 <img src="img/Fluxo.png" width="700px" /> <br>
-Figura 1 - Fluxo de telas do usuário.
+Figura 1 - Fluxo de telas do usuário
 </div>
 
 ## Wireframes
@@ -17,7 +17,7 @@ Figura 1 - Fluxo de telas do usuário.
 
 <div align="center">
 <img src="img/indexPage.png" width="400px" /> <br>
-Figura 2 - Tela da página inicial.
+Figura 2 - Tela da página inicial
 </div> 
 
 <hr>
@@ -27,7 +27,7 @@ Figura 2 - Tela da página inicial.
 
 <div align="center">
 <img src="img/RegisterPage.png" width="400px" /> <br>
-Figura 3 - Tela de cadastro.
+Figura 3 - Tela de cadastro
 </div>
 
 <hr>
