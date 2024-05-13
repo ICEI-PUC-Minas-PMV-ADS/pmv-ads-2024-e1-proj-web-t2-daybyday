@@ -37,7 +37,7 @@ Figura 3 - Tela de cadastro.
 
 <div align="center">
 <img src="img/LoginPage.png" width="400px" /> <br>
-Figura 3 - Tela de login
+Figura 4 - Tela de login
 </div> 
 
 <hr>
@@ -47,5 +47,5 @@ Figura 3 - Tela de login
 
 <div align="center">
 <img src="img/DashboardPage.png" width="400px" /> <br>
-Figura 3 - Tela de Dashboard
+Figura 5 - Tela de Dashboard
 </div> 
