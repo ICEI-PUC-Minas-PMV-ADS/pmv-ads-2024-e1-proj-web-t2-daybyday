@@ -12,6 +12,7 @@ document
       console.log("Login successful");
       window.location.href = "../dashboard/dashboard.html";
     } else {
+      alert("Invalid username and/or password");
       console.log("Login failed");
     }
   });
