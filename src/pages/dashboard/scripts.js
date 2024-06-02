@@ -144,3 +144,9 @@ function getUniqueTags() {
 }
 
 updateFilterOptions();
+
+document.getElementById('logout-btn').addEventListener('click', function() {
+    localStorage.clear();
+    window.location.href="/src/pages/login/login.html";
+})
+

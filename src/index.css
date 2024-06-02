@@ -1,86 +1,196 @@
 :root {
-  --main-bg-color: #0e1c33;
-  --main-font: Arial, sans-serif;
-  --title-color: rgb(234, 138, 172);
-  --text-color: white;
+    --main-bg-color: #0e1c33;
+    --main-font: Arial, sans-serif;
+    --title-color: rgb(234, 138, 172);
+    --text-color: white;
 }
 
 body {
-  font-family: var(--main-font);
-  background-color: var(--main-bg-color);
+    font-family: var(--main-font);
+    background-color: var(--main-bg-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-right: 20px;
 }
 
 h1 {
-  font-size: 24px;
-  color: var(--title-color);
-  margin-bottom: 20px;
+    font-size: 20px;
+    color: var(--title-color);
+    margin-bottom: 20px;
 }
 
 p {
-  font-size: 16px;
-  color: var(--text-color);
-  margin-bottom: 20px;
+    font-size: 14px;
+    color: var(--text-color);
+    margin-bottom: 20px;
 }
 
 .body-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
+    display: flex;
+    justify-content: space-between;
+    height: calc(100vh - 60px);
+}
+
+.left-container {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.right-container {
+    width: 50%;
+}
+
+.carousel {
+    display: flex;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+    flex: none;
+    width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+}
+
+.carousel-item img {
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .button-container {
-  display: flex;
-  width: 100%;
-  gap: 60px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    gap: 20px;
 }
 
-img {
-  width: 650px;
+.cta-button {
+    background-color: var(--title-color);
+    color: var(--text-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
 a {
-  cursor: pointer;
-  display: block;
-  width: 200px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 18px;
-  font-family: sans-serif;
-  text-decoration: none;
-  color: #333;
-  border: 2px solid #333;
-  letter-spacing: 2px;
-  text-align: center;
-  position: relative;
-  transition: all 0.35s;
+    cursor: pointer;
+    display: block;
+    width: 180px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all 0.35s;
 }
 
 a span {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 a:after {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: var(--title-color);
-  transition: all 0.35s;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--title-color);
+    transition: all 0.35s;
 }
 
 a:hover {
-  color: #fff;
+    color: #fff;
 }
 
 a:hover:after {
+    width: 100%;
+}
+
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.carousel-item p {
+  font-size: 20px; 
+  color: var(--title-color);
+  margin-bottom: 20px; 
+}
+.carousel-item li {
+  font-size: 20px; 
+  color: var(--title-color);
+  margin-bottom: 20px; 
+}
+
+.carousel-item h1 {
+  font-size: 20px; 
+  color: var(--title-color); 
+  margin-bottom: 20px;
+}
+
+.carousel-item a.cta-button {
+  background-color: var(--title-color);
+  color: var(--text-color);
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 75%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.carousel-indicator.active {
+  background-color: #000;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
