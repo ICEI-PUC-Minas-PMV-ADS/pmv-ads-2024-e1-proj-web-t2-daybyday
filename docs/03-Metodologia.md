@@ -25,6 +25,13 @@ A equipe está utilizando o GitHub para organização e estruturação das taref
   <li>Done: Nesta lista são adicionadas as tarefas finalizadas e as que passaram pelos testes e controle de qualidade, prontas para serem entregues aos usuários.</li>
  </ul>
 
+O quadro kanban do grupo no GitHub está disponível no link https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/1083 e é apresentado, na figura abaixo:
+
+<figure>
+    <img src="img/quadroKanban.png">
+    <figcaption> Figura 1 - Tela do kanban do GitHub</figcaption>
+</figure>
+
 ### Etiquetas
 
 As tarefas são etiquetadas em função da propriedade da atividade e seguem o seguinte esquema de cores/categorias:
@@ -52,4 +59,11 @@ As ferramentas empregadas no projeto são:
 - Ferramentas de desenho de tela (_wireframing_)
 
 O editor de código foi escolhido porque ele possui uma integração com o sistema de versão. As ferramentas de comunicação utilizadas possuem integração semelhante e por isso foram selecionadas. Por fim, para criar diagramas utilizamos essa ferramenta por melhor captar as necessidades da nossa solução.
+
+| AMBIENTE | PLATAFORMA |LINK DE ACESSO                 |
+|--------------------|--------------------------------------------------------------------------------|----------------------------------------|
+|Repositório de código fonte | GitHub | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-e1-proj-web-t2-daybyday/blob/main/src/README.md |
+|Documentos do projeto  | GitHub | https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-e1-proj-web-t2-daybyday |
+|Projeto de interface e wireframes | Figma | https://www.figma.com/ |
+|Gerenciamento do projeto  | GitHub | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/1083 |
 
