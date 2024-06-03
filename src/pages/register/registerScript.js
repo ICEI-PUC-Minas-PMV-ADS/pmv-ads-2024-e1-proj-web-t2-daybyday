@@ -4,9 +4,15 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     var password = document.getElementById('registerPassword').value;
     var confirm_password = document.getElementById("confirm_password").value;
 
-
     if (password !== confirm_password) {
         alert("Passwords do not match. Please try again.");
+        return;
+    }
+
+    if (/^(?=.*[A-Z])(?=.*[!@#$%^&*])(.{8,})$/.test(password)) {
+        console.log("Senha válida!");
+    } else {
+        alert("A senha não atende aos requisitos. Ela deve conter no mínimo 8 caractéres, Uma letra maiúscula e um caractér especial");
         return;
     }
 
@@ -19,15 +25,20 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     window.location.href = '../login/login.html';
 });
 
-document.getElementById("mostrarSenha").addEventListener("click", function(event) {
-    event.preventDefault(); // Evita o envio do formulário
+document.getElementById("mostrarSenha").addEventListener("click", function() {
     var senhaInput = document.getElementById("registerPassword");
     if (senhaInput.type === "password") {
         senhaInput.type = "text";
-        document.getElementById("mostrarSenha").textContent = "Esconder Senha";
     } else {
         senhaInput.type = "password";
-        document.getElementById("mostrarSenha").textContent = "Mostrar Senha";
     }
 });
 
+document.getElementById("mostrarConfirmSenha").addEventListener("click", function() {
+    var confirmSenhaInput = document.getElementById("confirm_password");
+    if (confirmSenhaInput.type === "password") {
+        confirmSenhaInput.type = "text";
+    } else {
+        confirmSenhaInput.type = "password";
+    }
+});
