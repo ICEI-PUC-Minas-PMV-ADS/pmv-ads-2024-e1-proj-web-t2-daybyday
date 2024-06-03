@@ -29,6 +29,26 @@ function addTransaction() {
     
     displayTransactions();
     calculateTotalValue(); 
+
+    const totalValue = transactions.reduce((total, transaction) => total + transaction.value, 0);
+    const monthlyBudget = parseFloat(localStorage.getItem('monthlyBudget'));
+    var goalDifference = monthlyBudget - totalValue;
+    var differenceText = "Difference: " + (goalDifference >= 0 ? "+" : "-") + Math.abs(goalDifference);
+    document.getElementById("goalDifference").innerText = differenceText;
+
+    document.getElementById("goalDifference").style.color = goalDifference >= 0 ? "green" : "red";
+    if (totalValue > monthlyBudget) {
+        alert("Warning: Your total transactions have exceeded your monthly goal!");
+    }
+    var isMonthlyBill = document.getElementById("monthlyBill").checked;
+    if (isMonthlyBill) {
+        // Armazenar a transação como mensal
+        var monthlyBills = JSON.parse(localStorage.getItem("monthlyBills")) || [];
+        monthlyBills.push({name: transactionName, value: transactionValue, tags: transactionTags});
+        localStorage.setItem("monthlyBills", JSON.stringify(monthlyBills));
+    }
+
+
     nameInput.value = "";
     valueInput.value = "";
     tagsInput.value = ""; 
@@ -150,3 +170,34 @@ document.getElementById('logout-btn').addEventListener('click', function() {
     window.location.href="/src/pages/login/login.html";
 })
 
+function setMonthlyBudget() {
+    var monthlyBudget = document.getElementById("monthlyBudget").value;
+
+    localStorage.setItem('monthlyBudget', monthlyBudget);
+    document.getElementById("monthlyGoal").innerText = "Monthly Goal: " + monthlyBudget;
+
+
+    alert("Monthly budget set to " + monthlyBudget);
+}
+
+function openModal() {
+    var modal = document.getElementById("budgetModal");
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    var modal = document.getElementById("budgetModal");
+    modal.style.display = "none";
+}
+
+// Função para exibir as transações mensais
+function displayMonthlyBills() {
+    var monthlyBills = JSON.parse(localStorage.getItem("monthlyBills")) || [];
+    // TODO: Exibir as transações mensais na tela apos o carregamento da página
+    monthlyBills.forEach(bill => {
+    });
+}
+
+window.onload = function() {
+    displayMonthlyBills();
+}
