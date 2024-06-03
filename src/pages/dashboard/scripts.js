@@ -162,7 +162,7 @@ function getUniqueTags() {
     const allTags = transactions.flatMap(transaction => transaction.tags);
     return Array.from(new Set(allTags));
 }
-
+// test
 updateFilterOptions();
 
 document.getElementById('logout-btn').addEventListener('click', function() {
