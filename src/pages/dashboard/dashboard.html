@@ -3,33 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Transactions</title>
+    <title>Transações Financeiras</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h2>Financial Transactions</h2>
-            <button onclick="togglePopup()">Add Transaction</button>
+            <h2>Transações financeiras</h2>
+            <button onclick="togglePopup()">Adicionar transição</button>
             <select id="filterSelect">
-                <option value="all">All Transactions</option>
+                <option value="all">Todas as transições</option>
             </select>
-            <button onclick="filterTransactions()">Filter</button>
+            <button onclick="filterTransactions()">Filtro</button>
         </div>
         <table id="transactionTable">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Value</th>
-                    <th>Tags</th>
+                    <th>Nome</th>
+                    <th>Valor</th>
+                    <th>Descrição</th>
                 </tr>
             </thead>
             <tbody id="transactionList"></tbody>
         </table>
         <div class="sums-container">
-            <div>Total Value: <span id="totalValue">0</span></div>
-            <div>Negative Total: <span id="negativeTotal">0</span></div>
-            <div>Positive Total: <span id="positiveTotal">0</span></div>
+            <div>Valor total : <span id="totalValue">0</span></div>
+            <div>Saldo negativo total: <span id="negativeTotal">0</span></div>
+            <div>Saldo positivo total: <span id="positiveTotal">0</span></div>
         </div>
     </div>
 
@@ -37,13 +37,13 @@
 
     <div id="popup" class="popup" style="display: none;">
         <div class="header">
-            <h3>Enter Transaction Details</h3>
+            <h3>Insira os detalhes da transação</h3>
             <button class="close-btn" onclick="togglePopup()">X</button>
         </div>
-        <input type="text" id="transactionName" placeholder="Transaction Name">
-        <input type="number" id="transactionValue" placeholder="Transaction Value">
-        <input type="text" id="transactionTags" placeholder="Transaction Tags">
-        <button onclick="addTransaction()">Add</button>
+        <input type="text" id="transactionName" placeholder="Nome da transação">
+        <input type="number" id="transactionValue" placeholder="Valor da transação">
+        <input type="text" id="transactionTags" placeholder="Descrição da transação">
+        <button onclick="addTransaction()">Adicionar Transação</button>
     </div>
 
 

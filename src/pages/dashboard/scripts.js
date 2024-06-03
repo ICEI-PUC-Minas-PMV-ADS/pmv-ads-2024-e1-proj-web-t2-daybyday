@@ -69,8 +69,8 @@ function displayTransactions(transactionsToShow = transactions) {
             <td>${transaction.value}</td>
             <td>${transaction.tags.join(", ")}</td>
             <td>
-                <button onclick="editTransaction(${index})">Edit</button>
-                <button onclick="deleteTransaction(${index})">Delete</button>
+                <button onclick="editTransaction(${index})">Editar</button>
+                <button onclick="deleteTransaction(${index})">Deletar</button>
             </td>
         `;
         transactionList.appendChild(row);
@@ -125,7 +125,7 @@ function updateFilterOptions() {
     
     const allOption = document.createElement("option");
     allOption.value = "all";
-    allOption.textContent = "All Transactions";
+    allOption.textContent = "Todas as transações";
     filterSelect.appendChild(allOption);
     
     uniqueTags.forEach(tag => {
