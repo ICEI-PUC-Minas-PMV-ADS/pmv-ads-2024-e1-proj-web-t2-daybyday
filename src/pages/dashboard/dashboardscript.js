@@ -84,13 +84,15 @@ function displayTransactions(transactionsToShow = transactions) {
     transactionsToShow.forEach((transaction, index) => {
         const row = document.createElement("tr");
         row.innerHTML = `
-            <td class="tableText">${transaction.name}</td>
+            <td class="tableText-name">
+                ${transaction.name}
+                <div>
+                    <button onclick="editTransaction(${index})">Editar</button>
+                    <button onclick="deleteTransaction(${index})">Deletar</button>
+                </div>
+            </td>
             <td class="tableText">${transaction.value}</td>
             <td class="tableText">${transaction.tags.join(", ")}</td>
-            <td>
-                <button onclick="editTransaction(${index})">Editar</button>
-                <button onclick="deleteTransaction(${index})">Deletar</button>
-            </td>
         `;
         transactionList.appendChild(row);
     });
