@@ -12,7 +12,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         return;
     }
 
-    function validPassword(password) {
+    function validPassword(password, username) {
         const minLength = /^(?=.{8,})/;
         const upperCase = /^(?=.*[A-Z])/;
         const specialChar = /^(?=.*[!@#$%^&*/])/;
@@ -26,10 +26,13 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         if (!specialChar.test(password)) {
             return "A senha deve conter pelo menos um caractere especial.";
         }
+        if (password === username) {
+            return "A senha não pode ser igual ao nome de usuário.";
+        }
         return '';
     }
 
-    var passwordError = validPassword(password);
+    var passwordError = validPassword(password, username);
     if (passwordError) {
         errorMessage.textContent = passwordError;
         return;
