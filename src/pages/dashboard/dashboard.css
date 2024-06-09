@@ -70,7 +70,7 @@ h2, h3 {
 .tableText-name {
     display: flex;
     align-items: center;
-    place-content: center;
+    place-content: space-between;
 }
 
 .popup {
