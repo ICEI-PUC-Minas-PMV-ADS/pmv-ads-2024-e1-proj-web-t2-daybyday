@@ -4,6 +4,12 @@
 
 Layout padrão da aplicação que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia.
 
+<img width="1114" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-e1-proj-web-t2-daybyday/assets/87545086/eaf82c22-9e18-427c-9da3-fd9e47bf924a">
+
+<img width="1119" alt="image" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-e1-proj-web-t2-daybyday/assets/87545086/89c38dd7-4d7e-4b46-afa9-8903946893a2">
+
+
+
 > **Links Úteis**:
 >
 > - [CSS Website Layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
