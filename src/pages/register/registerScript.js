@@ -6,7 +6,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     var confirm_password = document.getElementById("confirm_password").value;
 
           if (password !== confirm_password ) {
-        alert("Passwords do not match. Please try again.");
+        alert("As senhas não coincidem! Por favor, digite a mesma senha nos dois campos.");
         return;
     }
 
@@ -26,7 +26,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     localStorage.setItem('password', password);
     
 
-    alert("Sign up successful! Redirecting to login page...");
+    alert("Cadastro realizado com sucesso! Faça login para acessar a plataforma.");
     console.log('Login:', username, password);
 
     window.location.href = '../login/login.html';
