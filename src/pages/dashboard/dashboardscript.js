@@ -102,6 +102,7 @@ function calculateTotalValue(transactionsToCalculate = transactions) {
     const totalValueElement = document.getElementById("totalValue");
     const negativeTotalElement = document.getElementById("negativeTotal");
     const positiveTotalElement = document.getElementById("positiveTotal");
+    const monthlyGoal = parseFloat(localStorage.getItem('monthlyBudget'));
 
     let total = 0;
     let negativeTotal = 0;
@@ -109,10 +110,10 @@ function calculateTotalValue(transactionsToCalculate = transactions) {
 
     transactionsToCalculate.forEach(transaction => {
         total += transaction.value;
-        if (transaction.value < 0) {
-            negativeTotal += transaction.value;
-        } else if (transaction.value > 0) {
-            positiveTotal += transaction.value;
+        if (transaction.value > monthlyGoal) {
+            negativeTotal = transaction.value -  monthlyGoal;
+        } else if (transaction.value < monthlyGoal) {
+            positiveTotal =  monthlyGoal - transaction.value;
         }
     });
 
@@ -188,7 +189,7 @@ function closeModal() {
 function setMonthlyBudget() {
     const monthlyBudget = document.getElementById('monthlyBudget').value;
     localStorage.setItem('monthlyBudget', monthlyBudget);
-    document.getElementById("monthlyGoal").innerText = "Meta mensal: " + monthlyBudget;
+    document.getElementById("monthlyGoal").innerText = "Limite de gastos mensal: " + monthlyBudget;
     alert("Meta mensal estipulada para" + monthlyBudget);
     closeModal();
 }
@@ -205,9 +206,9 @@ function displayMonthlyBills() {
 document.addEventListener('DOMContentLoaded', () => {
     const monthlyBudget = localStorage.getItem('monthlyBudget');
     if (monthlyBudget) {
-        document.getElementById('monthlyGoal').textContent = `Meta mensal: ${monthlyBudget}`;
+        document.getElementById('monthlyGoal').textContent = `Limite de gastos mensal: ${monthlyBudget}`;
     } else {
-        document.getElementById('monthlyGoal').textContent = 'Sem meta mensal';
+        document.getElementById('monthlyGoal').textContent = 'Sem limite de gastos mensal';
     }
 });
 
