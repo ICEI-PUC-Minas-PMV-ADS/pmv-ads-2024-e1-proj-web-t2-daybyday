@@ -26,11 +26,13 @@
         </div>
         <div class="header">
             <h2>Transações financeiras</h2>
-            <button onclick="togglePopup()">Adicionar transição</button>
-            <select id="filterSelect" class="filterSelect">
-                <option value="all">Todas as transições</option>
-            </select>
-            <button id="filter-btn" onclick="filterTransactions()">Filtro</button>
+            <div>
+                <button onclick="togglePopup()">Adicionar transição</button>
+                <select id="filterSelect" class="filterSelect">
+                    <option value="all">Todas as transições</option>
+                </select>
+                <button id="filter-btn" onclick="filterTransactions()">Filtro</button>
+            </div>
         </div>
         <table id="transactionTable">
             <thead>
