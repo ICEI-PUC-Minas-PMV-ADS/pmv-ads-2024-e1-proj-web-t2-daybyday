@@ -1,22 +1,19 @@
 document.getElementById('registerForm').addEventListener('submit', function(event) {
     event.preventDefault();
     var username = document.getElementById('registerUsername').value;
-    var email = document.getElementById('registerEmail').value;
     var password = document.getElementById('registerPassword').value;
+    console.log(password);
     var confirm_password = document.getElementById("confirm_password").value;
 
-    if (!email.includes("@") ){
-        alert("Email inválido");
-    }
           if (password !== confirm_password ) {
         alert("Passwords do not match. Please try again.");
         return;
     }
 
     function validPassword(password) {
-        const regex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
-        return regex.test(password);
-      }
+    const regex = /^(?=.*[A-Z])(?=.*[!@#$%^&*/])(?=.{8,})/;
+    return regex.test(password);
+}
       if (validPassword(password)) {
           alert("Senha válida!");
       } else {
@@ -26,12 +23,11 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     
 
     localStorage.setItem('username', username);
-    localStorage.setItem('email', email);
     localStorage.setItem('password', password);
     
 
     alert("Sign up successful! Redirecting to login page...");
-    console.log('Login:', username, email, password);
+    console.log('Login:', username, password);
 
     window.location.href = '../login/login.html';
 });

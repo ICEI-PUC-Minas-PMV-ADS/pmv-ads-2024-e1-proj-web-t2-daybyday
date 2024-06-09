@@ -201,3 +201,10 @@ function displayMonthlyBills() {
 window.onload = function() {
     displayMonthlyBills();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const monthlyGoal = localStorage.getItem('monthlyGoal');
+    if (monthlyGoal) {
+        document.getElementById('monthlyGoal').textContent = `Monthly Goal: ${monthlyGoal}`;
+    }
+});
