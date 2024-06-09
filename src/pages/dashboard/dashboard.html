@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transações Financeiras</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
     <button type="button" class="logout" id="logout-btn">Logout</button>
@@ -15,8 +15,6 @@
                 <h3 id="goalDifference"></h3>
             </div>
             <button id="openModalButton" onclick="openModal()">Set Monthly Budget</button>
-
-            <!-- Modal para definir o orçamento mensal -->
             <div id="budgetModal" class="modal" style="display: none;">
                 <div class="modal-content">
                     <span id="closeModalButton" onclick="closeModal()" class="closeButton">&times;</span>
@@ -55,7 +53,7 @@
 
     <div id="popup" class="popup" style="display: none;">
         <div class="header">
-            <h3>Insira os detalhes da transação</h3>
+            <h3 class="h3Modal">Insira os detalhes da transação</h3>
             <button class="close-btn" onclick="togglePopup()">X</button>
         </div>
         <input type="text" id="transactionName" placeholder="Nome da transação">
