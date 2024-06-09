@@ -9,6 +9,23 @@
 <body>
     <button type="button" class="logout" id="logoutButton">Logout</button>
     <div class="container">
+        <div class="monthlyContainer">
+            <div class="monthly-goal-container">
+                <h3 id="monthlyGoal">Monthly Goal: </h3>
+                <h3 id="goalDifference"></h3>
+            </div>
+            <button id="openModalButton" onclick="openModal()">Set Monthly Budget</button>
+
+            <!-- Modal para definir o orçamento mensal -->
+            <div id="budgetModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span id="closeModalButton" onclick="closeModal()" class="closeButton">&times;</span>
+                    <h3>Set Monthly Budget</h3>
+                    <input type="number" id="monthlyBudget" placeholder="Monthly Budget">
+                    <button onclick="setMonthlyBudget()">Set</button>
+                </div>
+            </div>
+        </div>
         <div class="header">
             <h2>Transações financeiras</h2>
             <button onclick="togglePopup()">Adicionar transição</button>
@@ -44,9 +61,11 @@
         <input type="text" id="transactionName" placeholder="Nome da transação">
         <input type="number" id="transactionValue" placeholder="Valor da transação">
         <input type="text" id="transactionTags" placeholder="Descrição da transação">
+       <input type="checkbox" id="monthlyBill">
+        <label for="monthlyBill">Conta mensal</label>
         <button onclick="addTransaction()">Adicionar Transação</button>
     </div>
-
+   
 
     <script src="scripts.js"></script>
 </body>
