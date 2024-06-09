@@ -51,7 +51,7 @@ th, td {
     border: 1px solid #ccc;
     padding: 8px;
     text-align: left;
-    color: #ccc;
+    color: var(--text-color);
 }
 
 th {
