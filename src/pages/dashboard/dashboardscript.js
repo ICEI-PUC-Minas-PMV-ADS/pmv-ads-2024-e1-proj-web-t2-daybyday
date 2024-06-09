@@ -165,19 +165,22 @@ function getUniqueTags() {
 
 updateFilterOptions();
 
-document.getElementById('logout-btn').addEventListener('click', function() {
-    localStorage.clear();
-    window.location.href="/src/pages/login/login.html";
-})
+document.getElementById('logout-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    const confirmation = confirm('Tem certeza que deseja desconectar?');
+    if (confirmation) {
+        localStorage.clear();
+        window.location.href="/src/pages/login/login.html";
+    }
+});
 
 function setMonthlyBudget() {
     var monthlyBudget = document.getElementById("monthlyBudget").value;
-
     localStorage.setItem('monthlyBudget', monthlyBudget);
-    document.getElementById("monthlyGoal").innerText = "Monthly Goal: " + monthlyBudget;
+    document.getElementById("monthlyGoal").innerText = "Meta mensal: " + monthlyBudget;
 
 
-    alert("Monthly budget set to " + monthlyBudget);
+    alert("Meta mensal estipulada para" + monthlyBudget);
 }
 
 function openModal() {
@@ -203,8 +206,8 @@ window.onload = function() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const monthlyGoal = localStorage.getItem('monthlyGoal');
+    const monthlyBudget = localStorage.getItem('monthlyBudget');
     if (monthlyGoal) {
-        document.getElementById('monthlyGoal').textContent = `Monthly Goal: ${monthlyGoal}`;
+        document.getElementById('monthlyGoal').textContent = `Meta mensal: ${monthlyBudget}`;
     }
 });
