@@ -157,6 +157,7 @@ h2, h3 {
     top: 10px;
     right: 10px;
     cursor: pointer;
+    color: #ccc;
 }
 
 .h3Modal {

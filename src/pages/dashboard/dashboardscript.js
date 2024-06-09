@@ -174,23 +174,22 @@ document.getElementById('logout-btn').addEventListener('click', function(event) 
     }
 });
 
-function setMonthlyBudget() {
-    var monthlyBudget = document.getElementById("monthlyBudget").value;
-    localStorage.setItem('monthlyBudget', monthlyBudget);
-    document.getElementById("monthlyGoal").innerText = "Meta mensal: " + monthlyBudget;
 
-
-    alert("Meta mensal estipulada para" + monthlyBudget);
-}
-
-function openModal() {
-    var modal = document.getElementById("budgetModal");
-    modal.style.display = "block";
-}
+document.getElementById('setBudgetButton').addEventListener('click', function() {
+    document.getElementById('budgetModal').style.display = 'block';
+});
 
 function closeModal() {
-    var modal = document.getElementById("budgetModal");
-    modal.style.display = "none";
+    document.getElementById('budgetModal').style.display = 'none';
+    document.getElementById('setBudgetButton').style.display = 'block'; 
+}
+
+function setMonthlyBudget() {
+    const monthlyBudget = document.getElementById('monthlyBudget').value;
+    localStorage.setItem('monthlyBudget', monthlyBudget);
+    document.getElementById("monthlyGoal").innerText = "Meta mensal: " + monthlyBudget;
+    alert("Meta mensal estipulada para" + monthlyBudget);
+    closeModal();
 }
 
 // Função para exibir as transações mensais
@@ -201,9 +200,6 @@ function displayMonthlyBills() {
     });
 }
 
-window.onload = function() {
-    displayMonthlyBills();
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     const monthlyBudget = localStorage.getItem('monthlyBudget');
@@ -225,3 +221,12 @@ document.addEventListener('click', function(event) {
         filterSelect.style.display = 'none';
     }
 });
+
+document.getElementById('setBudgetButton').addEventListener('click', function() {
+    document.getElementById('budgetModal').style.display = 'block';
+    this.style.display = 'none';
+});
+
+window.onload = function() {
+    displayMonthlyBills();
+}

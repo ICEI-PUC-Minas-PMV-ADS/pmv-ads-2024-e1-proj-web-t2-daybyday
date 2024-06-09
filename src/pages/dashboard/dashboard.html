@@ -14,10 +14,10 @@
                 <h3 id="monthlyGoal">Meta mensal: </h3>
                 <h3 id="goalDifference"></h3>
             </div>
-            <button id="openModalButton" onclick="openModal()">Definir meta mensal</button>
+            <button id="setBudgetButton">Definir meta mensal</button>
             <div id="budgetModal" class="modal" style="display: none;">
                 <div class="modal-content">
-                    <span id="closeModalButton" onclick="closeModal()" class="closeButton">&times;</span>
+                    <span id="closeModalButton" onclick="closeModal()" class="closeButton">X</span>
                     <h3>Estipular meta mensal</h3>
                     <input type="number" id="monthlyBudget" placeholder="Meta mensal">
                     <button onclick="setMonthlyBudget()">Estipular</button>
