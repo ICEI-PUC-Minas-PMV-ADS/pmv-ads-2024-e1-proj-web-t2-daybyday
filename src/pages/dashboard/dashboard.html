@@ -59,11 +59,12 @@
         <input type="text" id="transactionName" placeholder="Nome da transação">
         <input type="number" id="transactionValue" placeholder="Valor da transação">
         <input type="text" id="transactionTags" placeholder="Descrição da transação">
-       <input type="checkbox" id="monthlyBill">
-        <label for="monthlyBill">Conta mensal</label>
+        <div class="monthlyBill">
+            <input type="checkbox" id="monthlyBill">
+            <label for="monthlyBill">Conta mensal</label>
+        </div>
         <button onclick="addTransaction()">Adicionar Transação</button>
     </div>
-   
 
     <script src="dashboardscript.js"></script>
 </body>

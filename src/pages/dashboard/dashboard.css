@@ -172,3 +172,7 @@ h2, h3 {
     transform: translate(-50%, -50%);
     z-index: 100;
 }
+
+.monthlyBill{
+    margin-bottom: 10px;
+}

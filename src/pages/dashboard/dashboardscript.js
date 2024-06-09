@@ -30,8 +30,9 @@ function addTransaction() {
     displayTransactions();
     calculateTotalValue(); 
 
-    const totalValue = transactions.reduce((total, transaction) => total + transaction.value, 0);
-    const monthlyBudget = parseFloat(localStorage.getItem('monthlyBudget'));
+const totalValue = transactions.reduce((total, transaction) => total + transaction.value, 0);
+const monthlyBudget = parseFloat(localStorage.getItem('monthlyBudget'));
+if (!isNaN(monthlyBudget)) {
     var goalDifference = monthlyBudget - totalValue;
     var differenceText = "Difference: " + (goalDifference >= 0 ? "+" : "-") + Math.abs(goalDifference);
     document.getElementById("goalDifference").innerText = differenceText;
@@ -40,15 +41,13 @@ function addTransaction() {
     if (totalValue > monthlyBudget) {
         alert("Warning: Your total transactions have exceeded your monthly goal!");
     }
-    var isMonthlyBill = document.getElementById("monthlyBill").checked;
-    if (isMonthlyBill) {
-        // Armazenar a transação como mensal
-        var monthlyBills = JSON.parse(localStorage.getItem("monthlyBills")) || [];
-        monthlyBills.push({name: transactionName, value: transactionValue, tags: transactionTags});
-        localStorage.setItem("monthlyBills", JSON.stringify(monthlyBills));
-    }
-
-
+}
+var isMonthlyBill = document.getElementById("monthlyBill").checked;
+if (isMonthlyBill) {
+    var monthlyBills = JSON.parse(localStorage.getItem("monthlyBills")) || [];
+    monthlyBills.push({name: transactionName, value: transactionValue, tags: transactionTags});
+    localStorage.setItem("monthlyBills", JSON.stringify(monthlyBills));
+}
     nameInput.value = "";
     valueInput.value = "";
     tagsInput.value = ""; 
