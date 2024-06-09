@@ -7,28 +7,37 @@ function togglePopup() {
 }
 
 function addTransaction() {
-  const nameInput = document.getElementById("transactionName");
-  const valueInput = document.getElementById("transactionValue");
-  const tagsInput = document.getElementById("transactionTags");
+    const nameInput = document.getElementById("transactionName");
+    const valueInput = document.getElementById("transactionValue");
+    const tagsInput = document.getElementById("transactionTags");
+    
+    const name = nameInput.value;
+    const value = parseFloat(valueInput.value);
+    const tags = tagsInput.value.split(",").map(tag => tag.trim());
+    
+    if (!name || isNaN(value)) {
+        alert("Por favor, preencha todos os campos corretamente.");
+        return;
+    }
 
-  const name = nameInput.value;
-  const value = parseFloat(valueInput.value);
-  const tags = tagsInput.value.split(",").map((tag) => tag.trim());
-
-  if (!name || isNaN(value)) {
-    alert("Please enter valid transaction details.");
-    return;
-  }
-
-  if (editedIndex === -1) {
-    transactions.push({ name, value, tags });
-  } else {
-    transactions[editedIndex] = { name, value, tags };
-    editedIndex = -1;
-  }
-
-  displayTransactions();
-  calculateTotalValue();
+    var isMonthlyBill = document.getElementById("monthlyBill").checked;
+    var newTransaction = {
+        name: name,
+        value: value,
+        tags: tags,
+        isMonthly: isMonthlyBill
+    };
+    
+    if (editedIndex === -1) {
+        transactions.push(newTransaction);
+    } else {
+        transactions[editedIndex] = newTransaction;
+        editedIndex = -1; 
+    }
+    localStorage.setItem("transactions", JSON.stringify(transactions));
+    
+    displayTransactions();
+    calculateTotalValue(); 
 
   const totalValue = transactions.reduce(
     (total, transaction) => total + transaction.value,
@@ -38,35 +47,23 @@ function addTransaction() {
   if (!isNaN(monthlyBudget)) {
     var goalDifference = monthlyBudget - totalValue;
     var differenceText =
-      "Difference: " +
+      "Diferença: " +
       (goalDifference >= 0 ? "+" : "-") +
       Math.abs(goalDifference);
     document.getElementById("goalDifference").innerText = differenceText;
-
-    document.getElementById("goalDifference").style.color =
-      goalDifference >= 0 ? "green" : "red";
+    document.getElementById("goalDifference").style.color = goalDifference >= 0 ? "green" : "red";
     if (totalValue > monthlyBudget) {
       alert(
-        "Warning: Your total transactions have exceeded your monthly goal!"
+        "O total de suas transações excede o limite de gastos mensal!"
       );
     }
-  }
-  var isMonthlyBill = document.getElementById("monthlyBill").checked;
-  if (isMonthlyBill) {
-    var monthlyBills = JSON.parse(localStorage.getItem("monthlyBills")) || [];
-    monthlyBills.push({
-      name: transactionName,
-      value: transactionValue,
-      tags: transactionTags,
-    });
-    localStorage.setItem("monthlyBills", JSON.stringify(monthlyBills));
-  }
-  nameInput.value = "";
-  valueInput.value = "";
-  tagsInput.value = "";
-
-  updateFilterOptions();
-  togglePopup();
+}
+    nameInput.value = "";
+    valueInput.value = "";
+    tagsInput.value = ""; 
+    
+    updateFilterOptions();
+    togglePopup();
     playClickSound();
 }
 
@@ -91,15 +88,18 @@ function deleteTransaction(index) {
   updateFilterOptions();
 }
 
-function displayTransactions(transactionsToShow = transactions) {
-  const transactionList = document.getElementById("transactionList");
-  transactionList.innerHTML = "";
+function displayTransactions() {
+    const transactionsToShow = JSON.parse(localStorage.getItem("transactions")) || transactions;
 
-  transactionsToShow.forEach((transaction, index) => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
+    const transactionList = document.getElementById("transactionList");
+    transactionList.innerHTML = "";
+    
+    transactionsToShow.forEach((transaction, index) => {
+        const row = document.createElement("tr");
+        const displayName = transaction.isMonthly ? `Mensal - ${transaction.name}` : transaction.name;
+        row.innerHTML = `
             <td class="tableText-name">
-                ${transaction.name}
+                ${displayName}
                 <div>
                     <button onclick="editTransaction(${index})">Editar</button>
                     <button onclick="deleteTransaction(${index})">Deletar</button>
@@ -214,23 +214,13 @@ function setMonthlyBudget() {
   closeModal();
 }
 
-// Função para exibir as transações mensais
-function displayMonthlyBills() {
-  var monthlyBills = JSON.parse(localStorage.getItem("monthlyBills")) || [];
-  // TODO: Exibir as transações mensais na tela apos o carregamento da página
-  monthlyBills.forEach((bill) => {});
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const monthlyBudget = localStorage.getItem("monthlyBudget");
-  if (monthlyBudget) {
-    document.getElementById(
-      "monthlyGoal"
-    ).textContent = `Limite de gastos mensal: ${monthlyBudget}`;
-  } else {
-    document.getElementById("monthlyGoal").textContent =
-      "Sem limite de gastos mensal";
-  }
+document.addEventListener('DOMContentLoaded', () => {
+    const monthlyBudget = localStorage.getItem('monthlyBudget');
+    if (monthlyBudget) {
+        document.getElementById('monthlyGoal').textContent = `Limite de gastos mensal: ${monthlyBudget}`;
+    } else {
+        document.getElementById('monthlyGoal').textContent = 'Sem limite de gastos mensal';
+    }
 });
 
 document.getElementById("filter-btn").addEventListener("click", function () {
