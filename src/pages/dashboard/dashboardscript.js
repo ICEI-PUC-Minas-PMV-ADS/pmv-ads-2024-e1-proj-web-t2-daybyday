@@ -207,7 +207,21 @@ window.onload = function() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const monthlyBudget = localStorage.getItem('monthlyBudget');
-    if (monthlyGoal) {
+    if (monthlyBudget) {
         document.getElementById('monthlyGoal').textContent = `Meta mensal: ${monthlyBudget}`;
+    } else {
+        document.getElementById('monthlyGoal').textContent = 'Sem meta mensal';
+    }
+});
+
+document.getElementById('filter-btn').addEventListener('click', function() {
+    document.getElementById('filterSelect').style.display = 'block';
+});
+
+document.addEventListener('click', function(event) {
+    const filterSelect = document.getElementById('filterSelect');
+    const filterButton = document.getElementById('filter-btn');
+    if (event.target !== filterSelect && event.target !== filterButton) {
+        filterSelect.style.display = 'none';
     }
 });

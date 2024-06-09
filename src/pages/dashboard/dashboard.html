@@ -18,19 +18,19 @@
             <div id="budgetModal" class="modal" style="display: none;">
                 <div class="modal-content">
                     <span id="closeModalButton" onclick="closeModal()" class="closeButton">&times;</span>
-                    <h3>Set Monthly Budget</h3>
-                    <input type="number" id="monthlyBudget" placeholder="Monthly Budget">
-                    <button onclick="setMonthlyBudget()">Set</button>
+                    <h3>Estipular meta mensal</h3>
+                    <input type="number" id="monthlyBudget" placeholder="Meta mensal">
+                    <button onclick="setMonthlyBudget()">Estipular</button>
                 </div>
             </div>
         </div>
         <div class="header">
             <h2>Transações financeiras</h2>
             <button onclick="togglePopup()">Adicionar transição</button>
-            <select id="filterSelect">
+            <select id="filterSelect" class="filterSelect">
                 <option value="all">Todas as transições</option>
             </select>
-            <button onclick="filterTransactions()">Filtro</button>
+            <button id="filter-btn" onclick="filterTransactions()">Filtro</button>
         </div>
         <table id="transactionTable">
             <thead>

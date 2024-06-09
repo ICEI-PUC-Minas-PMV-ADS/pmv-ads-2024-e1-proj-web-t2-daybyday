@@ -162,3 +162,12 @@ h2, h3 {
 .h3Modal {
     color: var(--title-color);
 }
+
+.filterSelect {
+    display: none;
+    position: fixed;
+    top: 55%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
