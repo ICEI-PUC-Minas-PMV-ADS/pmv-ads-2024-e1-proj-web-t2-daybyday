@@ -15,17 +15,22 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
   <td>CT-01: Verificar o funcionamento do login e cadastro de contas</td>
   <td>
    <ul>
-    <li>RF-01:	A aplicação deve permitir cadastrar contas.</li>
-   <li>RF-02:	A aplicação deve permitir logar na conta cadastrada.</li>
+    <li>RF-01:A aplicação deve permitir cadastrar contas.</li>
+   <li>RF-02:A aplicação deve permitir logar na conta cadastrada.</li>
    </ul>
   </td>
   <td>Verificar se é possível cadastrar e logar em uma conta cadastrada</td>
   <td>
    <ol>
-    <li>Acessar o navegador.</li>
-    <li>Informar o endereço do site.</li>
-    <li>Visualizar a página Home.</li>
-    <li>Clicar nos links da página Home.</li>
+  <li>Acessar o navegador</li>
+  <li>Informar endereço do site</li>
+  <li>Visualizar pagina home</li>
+  <li>Clicar em cadastrar</li>
+  <li>Inserir uma senha que falhe nas credenciais</li>
+  <li>Inserir uma senha que cumpra os requisitos</li>
+  <li>Salvar as credenciais no local storage</li>
+  <li>Ser possivel fazer logout</li>
+
    </ol>
    </td>
   <td>Todos os links da página Home devem encaminhar os usuários para as páginas descritas.</td>
@@ -95,5 +100,3 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
   <td>João</td>
  </tr>
 </table>
-
-
