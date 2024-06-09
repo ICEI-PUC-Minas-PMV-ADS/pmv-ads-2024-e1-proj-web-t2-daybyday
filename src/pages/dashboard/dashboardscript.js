@@ -67,6 +67,7 @@ function addTransaction() {
 
   updateFilterOptions();
   togglePopup();
+    playClickSound();
 }
 
 function editTransaction(index) {
@@ -251,6 +252,11 @@ document
     this.style.display = "none";
   });
 
-window.onload = function () {
-  displayMonthlyBills();
-};
+window.onload = function() {
+    displayMonthlyBills();
+}
+
+function playClickSound() {
+    var clickSound = document.getElementById("clickSound");
+    clickSound.play();
+}
