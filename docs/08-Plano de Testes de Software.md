@@ -65,8 +65,12 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
     <li>Acessar o navegador.</li>
     <li>Informar o endereço do site.</li>
     <li>Visualizar a página Home.</li>
-    <li>Clicar na página Livros.</li>
-    <li>Digitar no filtro de pesquisa algum dado presente na página Livros e verificar se o resultado é exibido na página.</li>
+    <li>Após entrar ser redirecionado para a pagina dashboard</li>
+    <li>Definir uma meta mensal</li>
+    <li>Adicionar gastos</li>
+    <li>Editar gastos</li>
+    <li>Filtrar gastos por descrição</li>
+
    </ol>
    </td>
   <td>Deve permitir acessar o dashboard e fazer as funcionalidades descritas.</td>
