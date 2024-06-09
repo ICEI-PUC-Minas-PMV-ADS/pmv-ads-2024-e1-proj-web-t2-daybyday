@@ -1,12 +1,16 @@
 # Registro de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>, <a href="8-Plano de Testes de Software.md"> Plano de Testes de Software</a>
+Os testes funcionais realizados na aplicação web são descritos a seguir.
 
-Relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado em um plano de testes pré-definido.
+<ol>
+  <li>CT-01: Verificar o funcionamento do login e cadastro de contas
+  https://jam.dev/c/5a5b9502-5c2f-4fd7-8631-4dff5fc51d38
+  </li>
+  <li>CT-02: Verificar o funcionamento das transações financeiras
+  https://jam.dev/c/839c36d0-225c-457e-bf45-e484d4442d04
+  </li>
+</ol>
 
 ## Avaliação
 
-Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
-
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
+Os testes de software mostraram que os requisitos priorizados foram atendidos, funcionando como planejado. Para as próximas iterações, serão acrescentadas melhorias no layout e responsividade da aplicação.
