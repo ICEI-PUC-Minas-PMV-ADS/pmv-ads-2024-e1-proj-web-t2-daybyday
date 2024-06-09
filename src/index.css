@@ -25,6 +25,8 @@ nav a {
     color: var(--text-color);
     text-decoration: none;
     margin-right: 20px;
+    z-index: 2;
+
 }
 
 h1 {
@@ -87,7 +89,13 @@ p {
 }
 
 .cta-button {
-    background-color: var(--title-color);
+    color: var(--text-color);
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.loginBtn{
     color: var(--text-color);
     padding: 8px 16px;
     text-decoration: none;
@@ -113,7 +121,7 @@ a {
 
 a span {
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 a:after {
@@ -125,6 +133,7 @@ a:after {
     height: 100%;
     background: var(--title-color);
     transition: all 0.35s;
+    z-index: -1;
 }
 
 a:hover {
@@ -170,6 +179,8 @@ a:hover:after {
   border-radius: 5px;
 }
 .carousel-indicators {
+
+  color: rgb(234, 138, 172);;
   position: absolute;
   bottom: 10px;
   left: 75%;
