@@ -13,12 +13,25 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     }
 
     function validPassword(password) {
-        const regex = /^(?=.*[A-Z])(?=.*[!@#$%^&*/])(?=.{8,})/;
-        return regex.test(password);
+        const minLength = /^(?=.{8,})/;
+        const upperCase = /^(?=.*[A-Z])/;
+        const specialChar = /^(?=.*[!@#$%^&*/])/;
+
+        if (!minLength.test(password)) {
+            return "A senha deve conter pelo menos 8 caracteres.";
+        }
+        if (!upperCase.test(password)) {
+            return "A senha deve conter pelo menos uma letra maiúscula.";
+        }
+        if (!specialChar.test(password)) {
+            return "A senha deve conter pelo menos um caractere especial.";
+        }
+        return '';
     }
 
-    if (!validPassword(password)) {
-        errorMessage.textContent = "Senha inválida! A senha deve conter pelo menos 8 caracteres, uma letra maiúscula e um caractere especial.";
+    var passwordError = validPassword(password);
+    if (passwordError) {
+        errorMessage.textContent = passwordError;
         return;
     }
 
