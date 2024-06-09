@@ -27,6 +27,7 @@ body {
 .watermark-img {
     width: 700px;
     height: auto;
+    margin-bottom: 20px;
 }
 
 .container {
