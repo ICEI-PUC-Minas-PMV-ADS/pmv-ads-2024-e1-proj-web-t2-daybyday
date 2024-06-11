@@ -89,7 +89,7 @@ function deleteTransaction(index) {
 }
 
 function displayTransactions() {
-    const transactionsToShow = JSON.parse(localStorage.getItem("transactions")) || transactions;
+    const transactionsToShow = transactions;
 
     const transactionList = document.getElementById("transactionList");
     transactionList.innerHTML = "";
