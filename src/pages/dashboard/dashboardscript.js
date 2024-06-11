@@ -1,5 +1,6 @@
 let transactions = [];
 let editedIndex = -1;
+let alertActivated = false; 
 
 function togglePopup() {
   const popup = document.getElementById("popup");
@@ -7,64 +8,65 @@ function togglePopup() {
 }
 
 function addTransaction() {
-    const nameInput = document.getElementById("transactionName");
-    const valueInput = document.getElementById("transactionValue");
-    const tagsInput = document.getElementById("transactionTags");
-    
-    const name = nameInput.value;
-    const value = parseFloat(valueInput.value);
-    const tags = tagsInput.value.split(",").map(tag => tag.trim());
-    
-    if (!name || isNaN(value)) {
-        alert("Por favor, preencha todos os campos corretamente.");
-        return;
-    }
+  const nameInput = document.getElementById("transactionName");
+  const valueInput = document.getElementById("transactionValue");
+  const tagsInput = document.getElementById("transactionTags");
 
-    var isMonthlyBill = document.getElementById("monthlyBill").checked;
-    var newTransaction = {
-        name: name,
-        value: value,
-        tags: tags,
-        isMonthly: isMonthlyBill
-    };
-    
-    if (editedIndex === -1) {
-        transactions.push(newTransaction);
-    } else {
-        transactions[editedIndex] = newTransaction;
-        editedIndex = -1; 
-    }
-    localStorage.setItem("transactions", JSON.stringify(transactions));
-    
-    displayTransactions();
-    calculateTotalValue(); 
+  const name = nameInput.value;
+  const value = parseFloat(valueInput.value);
+  const tags = tagsInput.value.split(",").map(tag => tag.trim());
+
+  if (!name || isNaN(value)) {
+      alert("Por favor, preencha todos os campos corretamente.");
+      return;
+  }
+
+  var isMonthlyBill = document.getElementById("monthlyBill").checked;
+  var newTransaction = {
+      name: name,
+      value: value,
+      tags: tags,
+      isMonthly: isMonthlyBill
+  };
+
+  if (editedIndex === -1) {
+      transactions.push(newTransaction);
+  } else {
+      transactions[editedIndex] = newTransaction;
+      editedIndex = -1;
+  }
+  localStorage.setItem("transactions", JSON.stringify(transactions));
+
+  displayTransactions();
+  calculateTotalValue();
 
   const totalValue = transactions.reduce(
-    (total, transaction) => total + transaction.value,
-    0
+      (total, transaction) => total + transaction.value,
+      0
   );
   const monthlyBudget = parseFloat(localStorage.getItem("monthlyBudget"));
   if (!isNaN(monthlyBudget)) {
-    var goalDifference = monthlyBudget - totalValue;
-    var differenceText =
-      "Diferença: " +
-      (goalDifference >= 0 ? "+" : "-") +
-      Math.abs(goalDifference);
-    document.getElementById("goalDifference").innerText = differenceText;
-    document.getElementById("goalDifference").style.color = goalDifference >= 0 ? "green" : "red";
-    if (totalValue > monthlyBudget) {
-      alert(
-        "O total de suas transações excede o limite de gastos mensal!"
-      );
-    }
-}
-    nameInput.value = "";
-    valueInput.value = "";
-    tagsInput.value = ""; 
-    
-    updateFilterOptions();
-    togglePopup();
-    playClickSound();
+      var goalDifference = monthlyBudget - totalValue;
+      var differenceText =
+          "Diferença: " +
+          (goalDifference >= 0 ? "+" : "-") +
+          Math.abs(goalDifference);
+      document.getElementById("goalDifference").innerText = differenceText;
+      document.getElementById("goalDifference").style.color = goalDifference >= 0 ? "green" : "red";
+
+      if (totalValue > monthlyBudget && !alertActivated) {
+          alert("O total de suas transações excede o limite de gastos mensal!");
+          alertActivated = true;
+      }
+  }
+
+  nameInput.value = "";
+  valueInput.value = "";
+  tagsInput.value = "";
+
+  updateFilterOptions();
+  togglePopup();
+  playClickSound();
 }
 
 function editTransaction(index) {
@@ -89,7 +91,7 @@ function deleteTransaction(index) {
 }
 
 function displayTransactions() {
-    const transactionsToShow = JSON.parse(localStorage.getItem("transactions")) || transactions;
+  const transactionsToShow = JSON.parse(localStorage.getItem("transactions")) || transactions;
 
     const transactionList = document.getElementById("transactionList");
     transactionList.innerHTML = "";
@@ -119,13 +121,13 @@ function calculateTotalValue(transactionsToCalculate = transactions) {
   const monthlyGoal = parseFloat(localStorage.getItem("monthlyBudget"));
 
   let total = 0;
-let negativeTotal = 0;
-let positiveTotal = 0;
+  let negativeTotal = 0;
+  let positiveTotal = 0;
 
-transactionsToCalculate.forEach((transaction) => {
+  transactionsToCalculate.forEach((transaction) => {
     total += transaction.value;
     if (transaction.value > monthlyGoal) {
-        negativeTotal += transaction.value - monthlyGoal;
+      negativeTotal += transaction.value - monthlyGoal;
     } else if (transaction.value < monthlyGoal) {
         positiveTotal += monthlyGoal - transaction.value;
     }
@@ -139,9 +141,8 @@ transactionsToCalculate.forEach((transaction) => {
         negativeTotal = total - monthlyGoal;
     } else {
         negativeTotal = 0;
-    }
-    
-});
+    } 
+  });
 
   totalValueElement.textContent = total.toFixed(2);
   negativeTotalElement.textContent = negativeTotal.toFixed(2);
