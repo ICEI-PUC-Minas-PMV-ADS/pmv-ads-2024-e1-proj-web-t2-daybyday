@@ -120,29 +120,13 @@ function calculateTotalValue(transactionsToCalculate = transactions) {
   const monthlyGoal = parseFloat(localStorage.getItem("monthlyBudget"));
 
   let total = 0;
-  let negativeTotal = 0;
-  let positiveTotal = 0;
 
   transactionsToCalculate.forEach((transaction) => {
-    total += transaction.value;
-    if (transaction.value > monthlyGoal) {
-      negativeTotal += transaction.value - monthlyGoal;
-    } else if (transaction.value < monthlyGoal) {
-        positiveTotal += monthlyGoal - transaction.value;
-    }
-    if (total < monthlyGoal) {
-        positiveTotal = monthlyGoal - total;
-    } else {
-        positiveTotal = 0;
-    }
-    
-    if (total > monthlyGoal) {
-        negativeTotal = total - monthlyGoal;
-    } else {
-        negativeTotal = 0;
-    } 
+      total += transaction.value;
   });
-
+  
+  let positiveTotal = total < monthlyGoal ? monthlyGoal - total : 0;
+  let negativeTotal = total > monthlyGoal ? total - monthlyGoal : 0;
   totalValueElement.textContent = total.toFixed(2);
   negativeTotalElement.textContent = negativeTotal.toFixed(2);
   positiveTotalElement.textContent = positiveTotal.toFixed(2);
