@@ -7,9 +7,7 @@ document
     var storedUsername = localStorage.getItem("username");
     var storedPassword = localStorage.getItem("password");
 
-    if (
-      (username && password)
-    ) {
+    if (username && password) {
       if (password === storedPassword && username === storedUsername) {
         alert("Login successful!");
         console.log("Login successful");
@@ -23,4 +21,3 @@ document
       console.log("Usuário não encontrado");
     }
   });
-

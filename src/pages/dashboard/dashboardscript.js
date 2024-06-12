@@ -1,5 +1,6 @@
 let transactions = [];
 let editedIndex = -1;
+let alertActivated = false;
 
 function togglePopup() {
   const popup = document.getElementById("popup");
@@ -7,37 +8,37 @@ function togglePopup() {
 }
 
 function addTransaction() {
-    const nameInput = document.getElementById("transactionName");
-    const valueInput = document.getElementById("transactionValue");
-    const tagsInput = document.getElementById("transactionTags");
-    
-    const name = nameInput.value;
-    const value = parseFloat(valueInput.value);
-    const tags = tagsInput.value.split(",").map(tag => tag.trim());
-    
-    if (!name || isNaN(value)) {
-        alert("Por favor, preencha todos os campos corretamente.");
-        return;
-    }
+  const nameInput = document.getElementById("transactionName");
+  const valueInput = document.getElementById("transactionValue");
+  const tagsInput = document.getElementById("transactionTags");
 
-    var isMonthlyBill = document.getElementById("monthlyBill").checked;
-    var newTransaction = {
-        name: name,
-        value: value,
-        tags: tags,
-        isMonthly: isMonthlyBill
-    };
-    
-    if (editedIndex === -1) {
-        transactions.push(newTransaction);
-    } else {
-        transactions[editedIndex] = newTransaction;
-        editedIndex = -1; 
-    }
-    localStorage.setItem("transactions", JSON.stringify(transactions));
-    
-    displayTransactions();
-    calculateTotalValue(); 
+  const name = nameInput.value;
+  const value = parseFloat(valueInput.value);
+  const tags = tagsInput.value.split(",").map((tag) => tag.trim());
+
+  if (!name || isNaN(value)) {
+    alert("Por favor, preencha todos os campos corretamente.");
+    return;
+  }
+
+  var isMonthlyBill = document.getElementById("monthlyBill").checked;
+  var newTransaction = {
+    name: name,
+    value: value,
+    tags: tags,
+    isMonthly: isMonthlyBill,
+  };
+
+  if (editedIndex === -1) {
+    transactions.push(newTransaction);
+  } else {
+    transactions[editedIndex] = newTransaction;
+    editedIndex = -1;
+  }
+  localStorage.setItem("transactions", JSON.stringify(transactions));
+
+  displayTransactions();
+  calculateTotalValue();
 
   const totalValue = transactions.reduce(
     (total, transaction) => total + transaction.value,
@@ -51,20 +52,22 @@ function addTransaction() {
       (goalDifference >= 0 ? "+" : "-") +
       Math.abs(goalDifference);
     document.getElementById("goalDifference").innerText = differenceText;
-    document.getElementById("goalDifference").style.color = goalDifference >= 0 ? "green" : "red";
-    if (totalValue > monthlyBudget) {
-      alert(
-        "O total de suas transações excede o limite de gastos mensal!"
-      );
+    document.getElementById("goalDifference").style.color =
+      goalDifference >= 0 ? "green" : "red";
+
+    if (totalValue > monthlyBudget && !alertActivated) {
+      alert("O total de suas transações excede o limite de gastos mensal!");
+      alertActivated = true;
     }
-}
-    nameInput.value = "";
-    valueInput.value = "";
-    tagsInput.value = ""; 
-    
-    updateFilterOptions();
-    togglePopup();
-    playClickSound();
+  }
+
+  nameInput.value = "";
+  valueInput.value = "";
+  tagsInput.value = "";
+
+  updateFilterOptions();
+  togglePopup();
+  playClickSound();
 }
 
 function editTransaction(index) {
@@ -89,15 +92,16 @@ function deleteTransaction(index) {
 }
 
 function displayTransactions() {
-    const transactionsToShow = transactions;
+  const transactionsToShow = transactions;
+  const transactionList = document.getElementById("transactionList");
+  transactionList.innerHTML = "";
 
-    const transactionList = document.getElementById("transactionList");
-    transactionList.innerHTML = "";
-    
-    transactionsToShow.forEach((transaction, index) => {
-        const row = document.createElement("tr");
-        const displayName = transaction.isMonthly ? `Mensal - ${transaction.name}` : transaction.name;
-        row.innerHTML = `
+  transactionsToShow.forEach((transaction, index) => {
+    const row = document.createElement("tr");
+    const displayName = transaction.isMonthly
+      ? `Mensal - ${transaction.name}`
+      : transaction.name;
+    row.innerHTML = `
             <td class="tableText-name">
                 ${displayName}
                 <div>
@@ -119,18 +123,13 @@ function calculateTotalValue(transactionsToCalculate = transactions) {
   const monthlyGoal = parseFloat(localStorage.getItem("monthlyBudget"));
 
   let total = 0;
-  let negativeTotal = 0;
-  let positiveTotal = 0;
 
   transactionsToCalculate.forEach((transaction) => {
     total += transaction.value;
-    if (transaction.value > monthlyGoal) {
-      negativeTotal = transaction.value - monthlyGoal;
-    } else if (transaction.value < monthlyGoal) {
-      positiveTotal = monthlyGoal - transaction.value;
-    }
   });
 
+  let positiveTotal = total < monthlyGoal ? monthlyGoal - total : 0;
+  let negativeTotal = total > monthlyGoal ? total - monthlyGoal : 0;
   totalValueElement.textContent = total.toFixed(2);
   negativeTotalElement.textContent = negativeTotal.toFixed(2);
   positiveTotalElement.textContent = positiveTotal.toFixed(2);
@@ -214,13 +213,16 @@ function setMonthlyBudget() {
   closeModal();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const monthlyBudget = localStorage.getItem('monthlyBudget');
-    if (monthlyBudget) {
-        document.getElementById('monthlyGoal').textContent = `Limite de gastos mensal: ${monthlyBudget}`;
-    } else {
-        document.getElementById('monthlyGoal').textContent = 'Sem limite de gastos mensal';
-    }
+document.addEventListener("DOMContentLoaded", () => {
+  const monthlyBudget = localStorage.getItem("monthlyBudget");
+  if (monthlyBudget) {
+    document.getElementById(
+      "monthlyGoal"
+    ).textContent = `Limite de gastos mensal: ${monthlyBudget}`;
+  } else {
+    document.getElementById("monthlyGoal").textContent =
+      "Sem limite de gastos mensal";
+  }
 });
 
 document.getElementById("filter-btn").addEventListener("click", function () {
@@ -243,6 +245,6 @@ document
   });
 
 function playClickSound() {
-    var clickSound = document.getElementById("clickSound");
-    clickSound.play();
+  var clickSound = document.getElementById("clickSound");
+  clickSound.play();
 }

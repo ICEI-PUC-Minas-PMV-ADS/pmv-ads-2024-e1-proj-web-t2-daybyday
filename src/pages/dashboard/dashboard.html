@@ -1,78 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Transações Financeiras</title>
-    <link rel="stylesheet" href="dashboard.css">
-</head>
-<body>
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
     <audio id="clickSound">
-        <source src="cash.mp3" type="audio/mpeg">
+      <source src="cash.mp3" type="audio/mpeg" />
     </audio>
     <button type="button" class="logout" id="logout-btn">Logout</button>
     <div class="watermark-container">
-        <img src="logoName.png" alt="logo.png" class="watermark-img">
+      <img src="logoName.png" alt="logo.png" class="watermark-img" />
     </div>
     <div class="container">
-        <div class="monthlyContainer">
-            <div class="monthly-goal-container">
-                <h3 id="monthlyGoal">Limite de gastos mensal: </h3>
-                <h3 id="goalDifference"></h3>
-            </div>
-            <button id="setBudgetButton">Definir limite de gastos mensal</button>
-            <div id="budgetModal" class="modal" style="display: none;">
-                <div class="modal-content">
-                    <span id="closeModalButton" onclick="closeModal()" class="closeButton">X</span>
-                    <h3>Estipular limite de gastos mensal</h3>
-                    <input type="number" id="monthlyBudget" placeholder="Meta mensal">
-                    <button onclick="setMonthlyBudget()">Estipular</button>
-                </div>
-            </div>
+      <div class="monthlyContainer">
+        <div class="monthly-goal-container">
+          <h3 id="monthlyGoal">Limite de gastos mensal:</h3>
+          <h3 id="goalDifference"></h3>
         </div>
-        <div class="header">
-            <h2>Transações financeiras</h2>
-            <div>
-                <button onclick="togglePopup()">Adicionar transição</button>
-                <select id="filterSelect" class="filterSelect">
-                    <option value="all">Todas as transições</option>
-                </select>
-                <button id="filter-btn" onclick="filterTransactions()">Filtro</button>
-            </div>
+        <button id="setBudgetButton">Definir limite de gastos mensal</button>
+        <div id="budgetModal" class="modal" style="display: none">
+          <div class="modal-content">
+            <span
+              id="closeModalButton"
+              onclick="closeModal()"
+              class="closeButton"
+              >X</span
+            >
+            <h3>Estipular limite de gastos mensal</h3>
+            <input type="number" id="monthlyBudget" placeholder="Meta mensal" />
+            <button onclick="setMonthlyBudget()">Estipular</button>
+          </div>
         </div>
-        <table id="transactionTable">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Valor</th>
-                    <th>Descrição</th>
-                </tr>
-            </thead>
-            <tbody id="transactionList"></tbody>
-        </table>
-        <div class="sums-container">
-            <div>Valor total : <span id="totalValue">0</span></div>
-            <div>Saldo negativo total: <span id="negativeTotal">0</span></div>
-            <div>Saldo positivo total: <span id="positiveTotal">0</span></div>
+      </div>
+      <div class="header">
+        <h2>Transações financeiras</h2>
+        <div>
+          <button onclick="togglePopup()">Adicionar transição</button>
+          <select id="filterSelect" class="filterSelect">
+            <option value="all">Todas as transições</option>
+          </select>
+          <button id="filter-btn" onclick="filterTransactions()">Filtro</button>
         </div>
+      </div>
+      <table id="transactionTable">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Descrição</th>
+          </tr>
+        </thead>
+        <tbody id="transactionList"></tbody>
+      </table>
+      <div class="sums-container">
+        <div>Valor total : <span id="totalValue">0</span></div>
+        <div>Saldo negativo total: <span id="negativeTotal">0</span></div>
+        <div>Saldo positivo total: <span id="positiveTotal">0</span></div>
+      </div>
     </div>
 
-    <div id="overlay" class="overlay" style="display: none;"></div>
-    <div id="popup" class="popup" style="display: none;">
-        <div class="header">
-            <h3 class="h3Modal">Insira os detalhes da transação</h3>
-            <button class="close-btn" onclick="togglePopup()">X</button>
-        </div>
-        <input type="text" id="transactionName" placeholder="Nome da transação">
-        <input type="number" id="transactionValue" placeholder="Valor da transação">
-        <input type="text" id="transactionTags" placeholder="Descrição da transação">
-        <div class="monthlyBill">
-            <input type="checkbox" id="monthlyBill">
-            <label for="monthlyBill">Conta mensal</label>
-        </div>
-        <button onclick="addTransaction()">Adicionar Transação</button>
+    <div id="overlay" class="overlay" style="display: none"></div>
+    <div id="popup" class="popup" style="display: none">
+      <div class="header">
+        <h3 class="h3Modal">Insira os detalhes da transação</h3>
+        <button class="close-btn" onclick="togglePopup()">X</button>
+      </div>
+      <input type="text" id="transactionName" placeholder="Nome da transação" />
+      <input
+        type="number"
+        id="transactionValue"
+        placeholder="Valor da transação"
+      />
+      <input
+        type="text"
+        id="transactionTags"
+        placeholder="Descrição da transação"
+      />
+      <div class="monthlyBill">
+        <input type="checkbox" id="monthlyBill" />
+        <label for="monthlyBill">Conta mensal</label>
+      </div>
+      <button onclick="addTransaction()">Adicionar Transação</button>
     </div>
 
     <script src="dashboardscript.js"></script>
-</body>
+  </body>
 </html>
