@@ -1,204 +1,203 @@
 :root {
-    --main-bg-color: #0e1c33;
-    --main-font: Arial, sans-serif;
-    --title-color: rgb(234, 138, 172);
-    --text-color: white;
+  --main-bg-color: #0e1c33;
+  --main-font: Arial, sans-serif;
+  --title-color: rgb(234, 138, 172);
+  --text-color: white;
 }
 
 body {
-    font-family: var(--main-font);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: var(--main-bg-color);
-    position: relative;
+  font-family: var(--main-font);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--main-bg-color);
+  position: relative;
 }
 
 .watermark-container {
-    position: absolute;
-    top: 18%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .watermark-img {
-    width: 700px;
-    height: auto;
-    margin-bottom: 20px;
+  width: 700px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .container {
-    position: relative;
-    width: 80%;
-    background-color: #192e51;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+  position: relative;
+  width: 80%;
+  background-color: #192e51;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
-
 
 button {
-    padding: 10px 20px;
-    background-color: var(--title-color);
-    color: var(--text-color);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 10px 20px;
+  background-color: var(--title-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-
 button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
-    color: var(--text-color);
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  color: var(--text-color);
 }
 
 th {
-    background-color: var(--title-color);
-    text-align-last: center;
+  background-color: var(--title-color);
+  text-align-last: center;
 }
 
 td {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
-h2, h3 {
-    color: var(--text-color);
+h2,
+h3 {
+  color: var(--text-color);
 }
 
 .tableText-name {
-    display: flex;
-    align-items: center;
-    place-content: space-between;
+  display: flex;
+  align-items: center;
+  place-content: space-between;
 }
 
 .popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 100;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
 }
 
 .popup input[type="text"],
 .popup input[type="number"] {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .container {
-    position: relative;
+  position: relative;
 }
 
 .sums-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: var(--text-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--text-color);
 }
 
 .sums-container > div {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .total-sum,
 .negative-sum,
 .positive-sum {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .logout {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: var(--title-color);
-    color: var(--text-color);
-    border: none;
-    border-radius: 4px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--title-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 4px;
 }
 
-
 .monthlyContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
 }
 
 .monthlyContainer:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .monthlyContainer > p {
-    margin: 0;
-    padding: 0;
-    color: #333;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
 .closeButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    color: #ccc;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #ccc;
 }
 
 .h3Modal {
-    color: var(--title-color);
+  color: var(--title-color);
 }
 
 .filterSelect {
-    display: none;
-    position: fixed;
-    top: 55%;
-    right: 4%;
-    transform: translate(-50%, -50%);
-    z-index: 100;
+  display: none;
+  position: fixed;
+  top: 55%;
+  right: 4%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
 }
 
-.monthlyBill{
-    margin-bottom: 10px;
+.monthlyBill {
+  margin-bottom: 10px;
 }
