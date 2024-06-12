@@ -45,7 +45,7 @@ function addTransaction() {
       0
   );
 
-  calculateGoalDifference(totalValue); // Chama a função calculateGoalDifference aqui
+  calculateGoalDifference(totalValue);
 
   nameInput.value = "";
   valueInput.value = "";
@@ -134,7 +134,7 @@ function calculateTotalValue(transactionsToCalculate = transactions) {
   negativeTotalElement.textContent = negativeTotal.toFixed(2);
   positiveTotalElement.textContent = positiveTotal.toFixed(2);
 
-  calculateGoalDifference(total); // Chama a função calculateGoalDifference aqui também
+  calculateGoalDifference(total);
 }
 
 function calculateGoalDifference(totalValue) {
