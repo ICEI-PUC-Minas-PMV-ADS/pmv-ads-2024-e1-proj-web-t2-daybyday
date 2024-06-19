@@ -36,11 +36,11 @@
         </div>
       </div>
       <div class="header">
-        <h2>Transações financeiras</h2>
+        <h2>Transações Financeiras</h2>
         <div>
-          <button onclick="togglePopup()">Adicionar transição</button>
+          <button onclick="togglePopup()">Adicionar transação</button>
           <select id="filterSelect" class="filterSelect">
-            <option value="all">Todas as transições</option>
+            <option value="all">Todas as transações</option>
           </select>
           <button id="filter-btn" onclick="filterTransactions()">Filtro</button>
         </div>
@@ -56,7 +56,7 @@
         <tbody id="transactionList"></tbody>
       </table>
       <div class="sums-container">
-        <div>Valor total : <span id="totalValue">0</span></div>
+        <div>Valor total Gasto: <span id="totalValue">0</span></div>
         <div>Saldo negativo total: <span id="negativeTotal">0</span></div>
         <div>Saldo positivo total: <span id="positiveTotal">0</span></div>
       </div>
@@ -83,7 +83,7 @@
         <input type="checkbox" id="monthlyBill" />
         <label for="monthlyBill">Conta mensal</label>
       </div>
-      <button onclick="addTransaction()">Adicionar Transação</button>
+      <button onclick="addTransaction()">Editar transação</button>
     </div>
 
     <script src="dashboardscript.js"></script>
