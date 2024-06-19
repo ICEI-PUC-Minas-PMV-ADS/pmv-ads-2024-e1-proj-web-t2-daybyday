@@ -70,7 +70,7 @@ p {
 
 .carousel {
   display: flex;
-  transition: margin-left 0.5s ease-in-out;
+  transition: 0.5s;
   width: 500%;
 }
 
