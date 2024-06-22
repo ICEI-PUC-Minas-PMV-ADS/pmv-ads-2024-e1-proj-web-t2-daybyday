@@ -188,8 +188,7 @@ document
     event.preventDefault();
     const confirmation = confirm("Tem certeza que deseja desconectar?");
     if (confirmation) {
-      localStorage.clear();
-      window.location.href = "/src/pages/login/login.html";
+      window.location.href = "/src";
     }
   });
 
