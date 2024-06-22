@@ -17,8 +17,8 @@
       <ul class="sidebar-menu">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
-        <li><button onclick="togglePopup()">Adicionar transação</button></li>
-        <li><button id="setBudgetButton">Orçamento mensal</button></li>
+        <li><div onclick="toggleTrasactionPopup()">Adicionar transação</div></li>
+        <li><div onclick="toggleBudgetPopup()" id="setBudgetButton">Orçamento mensal</div></li>
       </ul>
     </div>
 
@@ -33,7 +33,7 @@
         <div>Saldo positivo total: <span id="positiveTotal">0</span></div>
       </div>
     </div>
-  
+
     <table id="transactionTable">
       <thead>
         <tr>
@@ -46,27 +46,33 @@
     </table>
   </div>
 
-  <div id="popup" class="popup" style="display: none">
+  <div id="transaction-popup" class="popup" style="display: none">
     <div class="header">
-      <h3 class="h3Modal">Insira os detalhes da transação</h3>
-      <button class="close-btn" onclick="togglePopup()">X</button>
+      <h3 class="h3Modal">Detalhes da transação</h3>
+      <button class="close-btn" onclick="toggleTrasactionPopup()">X</button>
     </div>
-    <input type="text" id="transactionName" placeholder="Nome da transação" />
-    <input
-      type="number"
-      id="transactionValue"
-      placeholder="Valor da transação"
-    />
-    <input
-      type="text"
-      id="transactionTags"
-      placeholder="Descrição da transação"
-    />
-    <div class="monthlyBill">
-      <input type="checkbox" id="monthlyBill" />
-      <label for="monthlyBill">Conta mensal</label>
+    <div class="inputs-container">
+      <input type="text" id="transactionName" placeholder="Nome da transação" />
+      <input type="number" id="transactionValue" placeholder="Valor da transação" />
+      <input type="text" id="transactionTags" placeholder="Descrição da transação" />
     </div>
-    <button onclick="addTransaction()">Adicionar Transação</button>
+    <div class="footer">
+      <div class="monthlyBill">
+        <input type="checkbox" id="monthlyBill" />
+        <label for="monthlyBill">Conta mensal</label>
+      </div>
+      <button onclick="addTransaction()">Adicionar Transação</button>
+    </div>
+    
+  </div>
+
+  <div id="budget-popup" class="popup" style="display: none">
+    <div class="header">
+      <h3 class="h3Modal">Meta de economia</h3>
+      <button class="close-btn" onclick="toggleBudgetPopup()">X</button>
+    </div>
+    <input type="number" id="monthlyBudget" placeholder="Meta mensal" />
+    <button onclick="setMonthlyBudget()">Estipular</button>
   </div>
 </body>
 

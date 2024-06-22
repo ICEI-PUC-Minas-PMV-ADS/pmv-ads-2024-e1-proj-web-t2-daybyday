@@ -2,88 +2,6 @@ let transactions = [];
 let editedIndex = -1;
 let alertActivated = false;
 
-function togglePopup() {
-  const popup = document.getElementById("popup");
-  popup.style.display = popup.style.display === "none" ? "block" : "none";
-}
-
-function addTransaction() {
-  const nameInput = document.getElementById("transactionName");
-  const valueInput = document.getElementById("transactionValue");
-  const tagsInput = document.getElementById("transactionTags");
-
-  const name = nameInput.value;
-  const value = parseFloat(valueInput.value);
-  const tags = tagsInput.value.split(",").map((tag) => tag.trim());
-
-  if (!name || isNaN(value)) {
-    alert("Por favor, preencha todos os campos corretamente.");
-    return;
-  }
-
-  var isMonthlyBill = document.getElementById("monthlyBill").checked;
-  var newTransaction = {
-    name: name,
-    value: value,
-    tags: tags,
-    isMonthly: isMonthlyBill,
-  };
-
-  if (editedIndex === -1) {
-    transactions.push(newTransaction);
-  } else {
-    transactions[editedIndex] = newTransaction;
-    editedIndex = -1;
-  }
-  localStorage.setItem("transactions", JSON.stringify(transactions));
-
-  displayTransactions();
-  calculateTotalValue();
-
-  const totalValue = transactions.reduce(
-    (total, transaction) => total + transaction.value,
-    0
-  );
-  const monthlyBudget = parseFloat(localStorage.getItem("monthlyBudget"));
-  if (!isNaN(monthlyBudget)) {
-    var goalDifference = monthlyBudget - totalValue;
-    var differenceText =
-      "Diferença: " +
-      (goalDifference >= 0 ? "+" : "-") +
-      Math.abs(goalDifference);
-    document.getElementById("goalDifference").innerText = differenceText;
-    document.getElementById("goalDifference").style.color =
-      goalDifference >= 0 ? "green" : "red";
-
-    if (totalValue > monthlyBudget && !alertActivated) {
-      alert("O total de suas transações excede o limite de gastos mensal!");
-      alertActivated = true;
-    }
-  }
-
-  nameInput.value = "";
-  valueInput.value = "";
-  tagsInput.value = "";
-
-  updateFilterOptions();
-  togglePopup();
-  playClickSound();
-}
-
-function editTransaction(index) {
-  const transaction = transactions[index];
-  const nameInput = document.getElementById("transactionName");
-  const valueInput = document.getElementById("transactionValue");
-  const tagsInput = document.getElementById("transactionTags");
-
-  nameInput.value = transaction.name;
-  valueInput.value = transaction.value;
-  tagsInput.value = transaction.tags.join(", ");
-  editedIndex = index;
-
-  togglePopup();
-}
-
 function deleteTransaction(index) {
   transactions.splice(index, 1);
   displayTransactions();
@@ -204,15 +122,6 @@ function closeModal() {
   document.getElementById("setBudgetButton").style.display = "block";
 }
 
-function setMonthlyBudget() {
-  const monthlyBudget = document.getElementById("monthlyBudget").value;
-  localStorage.setItem("monthlyBudget", monthlyBudget);
-  document.getElementById("monthlyGoal").innerText =
-    "Limite de gastos mensal: " + monthlyBudget;
-  alert("Meta mensal estipulada para " + monthlyBudget);
-  closeModal();
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   const monthlyBudget = localStorage.getItem("monthlyBudget");
   if (monthlyBudget) {
@@ -225,9 +134,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.getElementById("filter-btn").addEventListener("click", function () {
-  document.getElementById("filterSelect").style.display = "block";
-});
+
+
+// FILTROS
 
 document.addEventListener("click", function (event) {
   const filterSelect = document.getElementById("filterSelect");
@@ -237,14 +146,123 @@ document.addEventListener("click", function (event) {
   }
 });
 
-document
-  .getElementById("setBudgetButton")
-  .addEventListener("click", function () {
-    document.getElementById("budgetModal").style.display = "block";
-    this.style.display = "none";
-  });
+document.getElementById("filter-btn").addEventListener("click", function () {
+  // Troca o estilo de display para abrir e fechar o filtros
+  document.getElementById("filterSelect").style.display = "block";
+});
+
+// POPUP DE TRANSACAO
+
+function toggleTrasactionPopup() {
+  // acha o popup
+  const popup = document.getElementById("transaction-popup");
+  // troca o estilo de display para abrir e fechar o popup
+  popup.style.display = popup.style.display === "none" ? "flex" : "none";
+}
+
+function editTransaction(index) {
+  const transaction = transactions[index];
+  const nameInput = document.getElementById("transactionName");
+  const valueInput = document.getElementById("transactionValue");
+  const tagsInput = document.getElementById("transactionTags");
+
+  nameInput.value = transaction.name;
+  valueInput.value = transaction.value;
+  tagsInput.value = transaction.tags.join(", ");
+  editedIndex = index;
+
+  toggleTrasactionPopup();
+}
 
 function playClickSound() {
-  var clickSound = document.getElementById("clickSound");
+  // acha o som de click
+  const clickSound = document.getElementById("clickSound");
+  // toca o som
   clickSound.play();
+}
+
+function addTransaction() {
+  const nameInput = document.getElementById("transactionName");
+  const valueInput = document.getElementById("transactionValue");
+  const tagsInput = document.getElementById("transactionTags");
+
+  const name = nameInput.value;
+  const value = parseFloat(valueInput.value);
+  const tags = tagsInput.value.split(",").map((tag) => tag.trim());
+
+  if (!name || isNaN(value)) {
+    alert("Por favor, preencha todos os campos corretamente.");
+    return;
+  }
+
+  var isMonthlyBill = document.getElementById("monthlyBill").checked;
+  var newTransaction = {
+    name: name,
+    value: value,
+    tags: tags,
+    isMonthly: isMonthlyBill,
+  };
+
+  if (editedIndex === -1) {
+    transactions.push(newTransaction);
+  } else {
+    transactions[editedIndex] = newTransaction;
+    editedIndex = -1;
+  }
+  localStorage.setItem("transactions", JSON.stringify(transactions));
+
+  displayTransactions();
+  calculateTotalValue();
+
+  const totalValue = transactions.reduce(
+    (total, transaction) => total + transaction.value,
+    0
+  );
+  const monthlyBudget = parseFloat(localStorage.getItem("monthlyBudget"));
+  if (!isNaN(monthlyBudget)) {
+    var goalDifference = monthlyBudget - totalValue;
+    var differenceText =
+      "Diferença: " +
+      (goalDifference >= 0 ? "+" : "-") +
+      Math.abs(goalDifference);
+    document.getElementById("goalDifference").innerText = differenceText;
+    document.getElementById("goalDifference").style.color =
+      goalDifference >= 0 ? "green" : "red";
+
+    if (totalValue > monthlyBudget && !alertActivated) {
+      alert("O total de suas transações excede o limite de gastos mensal!");
+      alertActivated = true;
+    }
+  }
+
+  nameInput.value = "";
+  valueInput.value = "";
+  tagsInput.value = "";
+
+  updateFilterOptions();
+  toggleTrasactionPopup();
+  playClickSound();
+}
+
+// POPUP DE ORCAMENTO
+
+function toggleBudgetPopup() {
+  // acha o popup
+  const popup = document.getElementById("budget-popup");
+  // troca o estilo de display para abrir e fechar o popup
+  popup.style.display = popup.style.display === "none" ? "flex" : "none";
+}
+
+function setMonthlyBudget() {
+  // acha o input de orcamento mensal
+  const monthlyBudget = document.getElementById("monthlyBudget").value;
+  // joga pro local 
+  localStorage.setItem("monthlyBudget", monthlyBudget);
+  // insere texto no campo de monthlyGoal
+  document.getElementById("monthlyGoal").innerText =
+    "Limite de gastos mensal: " + monthlyBudget;
+  // abre um alerta para mostrar que foi estipulado
+  alert("Meta mensal estipulada para " + monthlyBudget);
+  // fecha o popup
+  toggleBudgetPopup();
 }

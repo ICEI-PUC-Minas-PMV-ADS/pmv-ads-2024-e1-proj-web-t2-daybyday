@@ -67,16 +67,28 @@ h1, h2, p {
   font-size: 20px;
 }
 
-.sidebar-menu li a {
+.sidebar-menu li a,
+.sidebar-menu li div {
   display: block;
   padding: 10px 20px;
   color: var(--sidebar-text-color);
   text-decoration: none;
   width: 100%;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
-.sidebar-menu li a:hover {
+.sidebar-menu li {
+  display: block;
+  padding: 10px 20px;
+  color: var(--sidebar-text-color);
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li div:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -152,16 +164,20 @@ td {
 /* ------------------------------------------------------------------------ */
 
 .popup {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   top: 50%;
-  left: 50%;
+  left: 62%;
+  width: 60%;
   transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 100;
+  min-height: 167px;
 }
 
 .popup input[type="text"],
@@ -176,9 +192,34 @@ td {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
 }
 
-.popup > .h3 {
-   color: var(--title-color);
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputs-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputs-container > div {
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0e1c33;
+}
+
+.input-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0e1c33;
 }
