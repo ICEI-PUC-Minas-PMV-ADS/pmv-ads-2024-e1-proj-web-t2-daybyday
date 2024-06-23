@@ -6,7 +6,7 @@ function deleteTransaction(index) {
   transactions.splice(index, 1);
   displayTransactions();
   calculateTotalValue();
-  updateFilterOptions();
+  // updateFilterOptions();
 }
 
 function displayTransactions() {
@@ -105,33 +105,10 @@ function filterTransactions() {
   calculateTotalValue(filteredTransactions);
 }
 
-function updateFilterOptions() {
-  const filterSelect = document.getElementById("filterSelect");
-  const uniqueTags = getUniqueTags();
-
-  filterSelect.innerHTML = "";
-
-  const allOption = document.createElement("option");
-  allOption.value = "all";
-  allOption.textContent = "Todas as transações";
-  filterSelect.appendChild(allOption);
-
-  uniqueTags.forEach((tag) => {
-    if (tag !== "") {
-      const option = document.createElement("option");
-      option.value = tag;
-      option.textContent = tag;
-      filterSelect.appendChild(option);
-    }
-  });
-}
-
 function getUniqueTags() {
   const allTags = transactions.flatMap((transaction) => transaction.tags);
   return Array.from(new Set(allTags));
 }
-
-updateFilterOptions();
 
 document
   .getElementById("logout-btn")
@@ -285,7 +262,7 @@ function addTransaction() {
   valueInput.value = "";
   tagsInput.value = "";
 
-  updateFilterOptions();
+  // updateFilterOptions();
   toggleTrasactionPopup();
   playClickSound();
 }
