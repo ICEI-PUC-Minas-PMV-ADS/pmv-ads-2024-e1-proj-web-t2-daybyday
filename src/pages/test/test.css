@@ -218,6 +218,7 @@ td {
 
 .popup input[type="text"],
 .popup input[type="number"] {
+  width: 30%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;

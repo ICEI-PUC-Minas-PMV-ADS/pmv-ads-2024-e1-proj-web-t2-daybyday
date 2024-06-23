@@ -74,26 +74,28 @@ function calculateTotalValue(transacoes = transactions) {
     receitasSum += positive;
   });
 
-  // console de todos os valores
-  console.log(positivos, negativos, saldoSum, despesasSum, receitasSum);
-
-  
   saldoAtual.textContent = `R$${saldoSum.toFixed(2)}`;
   despesas.textContent = `R$${despesasSum.toFixed(2)}`;
   receitas.textContent = `R$${receitasSum.toFixed(2)}`;
 
   const metaDeEconomia = parseFloat(localStorage.getItem("monthlyBudget"));
-  document.getElementById("economias").innerText = `R$${metaDeEconomia.toFixed(2)}`;
+  document.getElementById("economias").innerText = metaDeEconomia ? `R$${metaDeEconomia.toFixed(
+    2
+  )}` : "Não definida";
 
   if (!isNaN(metaDeEconomia)) {
     var diferenca = saldoSum - metaDeEconomia;
-    var textoDiferenca = `Saldo: ${(diferenca >= 0 ? "+" : "-")} R$${Math.abs(diferenca).toFixed(2)}`
+    var textoDiferenca = `Saldo: ${diferenca >= 0 ? "+" : "-"} R$${Math.abs(
+      diferenca
+    ).toFixed(2)}`;
     document.getElementById("diferenca").innerText = textoDiferenca;
     document.getElementById("diferenca").style.color =
       diferenca >= 0 ? "green" : "red";
 
-    if (saldoSum > metaDeEconomia && !alertActivated) {
-      alert("O total de suas transações excede o limite de gastos mensal!");
+    if (diferenca < 0 && !alertActivated) {
+      alert(
+        "O total de suas transações excede o limite de gastos mensal para se atingir a meta!"
+      );
       alertActivated = true;
     }
   }
@@ -108,20 +110,25 @@ function filterTransactions() {
   let filteredTransactions;
 
   if (filterOption === "all") {
-      filteredTransactions = transactions;
+    filteredTransactions = transactions;
   } else if (filterOption === "income") {
-      filteredTransactions = transactions.filter(transaction => transaction.value >= 0);
+    filteredTransactions = transactions.filter(
+      (transaction) => transaction.value >= 0
+    );
   } else if (filterOption === "expenses") {
-      filteredTransactions = transactions.filter(transaction => transaction.value < 0);
+    filteredTransactions = transactions.filter(
+      (transaction) => transaction.value < 0
+    );
   } else {
-      // Filtra por tag específica
-      filteredTransactions = transactions.filter(transaction => transaction.tags.includes(filterOption));
+    // Filtra por tag específica
+    filteredTransactions = transactions.filter((transaction) =>
+      transaction.tags.includes(filterOption)
+    );
   }
 
   displayTransactions(filteredTransactions);
   calculateTotalValue(filteredTransactions);
 }
-
 
 function getUniqueTags() {
   const allTags = transactions.flatMap((transaction) => transaction.tags);
@@ -140,14 +147,13 @@ function updateFilterOptions() {
   `;
 
   // Adiciona as opções de tags únicas
-  uniqueTags.forEach(tag => {
-      const option = document.createElement("option");
-      option.value = tag;
-      option.textContent = tag;
-      filterSelect.appendChild(option);
+  uniqueTags.forEach((tag) => {
+    const option = document.createElement("option");
+    option.value = tag;
+    option.textContent = tag;
+    filterSelect.appendChild(option);
   });
 }
-
 
 // POPUP DE TRANSACAO
 
@@ -201,6 +207,27 @@ function deleteTransaction(index) {
   calculateTotalValue();
 }
 
+function clearAllTransactions() {
+  const confirmacaoDeLimpeza = confirm(
+    "Tem certeza que deseja limpar todos os dados?"
+  );
+
+  if (confirmacaoDeLimpeza) {
+    // Limpa o array de transacoes
+    transactions = [];
+
+    // Remove as transacoes do local storage
+    localStorage.removeItem("transactions");
+
+    // Atualiza a tabela de transacoes e os valores totais
+    displayTransactions(transactions);
+    calculateTotalValue();
+
+    // Atualiza as opções do filtro de tags
+    updateFilterOptions();
+  }
+}
+
 function addTransaction() {
   // acha os inputs da transacao nome, valor e tags
   const nameInput = document.getElementById("transactionName");
@@ -212,7 +239,6 @@ function addTransaction() {
   // como recebemos a string do input, precisamos transformar em float
   const value = parseFloat(valueInput.value);
   const tags = tagsInput.value;
-  console.log(name, value, tags, tagsInput.value);
 
   // se o nome nao for preenchido ou o valor nao for um numero, alerta
   if (!name || isNaN(value)) {
@@ -267,15 +293,33 @@ function toggleBudgetPopup() {
 function setMonthlyBudget() {
   // acha o input de orcamento mensal
   const monthlyBudget = document.getElementById("monthlyBudget").value;
+  const monthlyBudgetN = parseFloat(monthlyBudget);
   // joga pro local
   localStorage.setItem("monthlyBudget", monthlyBudget);
-  // insere texto no campo de monthlyGoal
-  document.getElementById("monthlyGoal").innerText =
-    "Limite de gastos mensal: " + monthlyBudget;
   // abre um alerta para mostrar que foi estipulado
-  alert("Meta mensal estipulada para " + monthlyBudget);
+  alert(
+    "Meta de economia mensal estipulada em " + `R$${monthlyBudgetN.toFixed(2)}`
+  );
+  // calcula os dados novamente com a nova meta
+  calculateTotalValue();
   // fecha o popup
   toggleBudgetPopup();
+}
+
+function clearMonthlyBudget() {
+  const confirmacaoDeLimpeza = confirm(
+    "Tem certeza que deseja limpar a meta de economia?"
+  );
+  
+  if (confirmacaoDeLimpeza) {
+    // remove o orcamento mensal do local storage
+    localStorage.removeItem("monthlyBudget");
+    // abre um alerta para mostrar que foi removido
+    alert("Meta de economia mensal removida.");
+    // calcula os dados novamente sem a meta
+    calculateTotalValue();
+    document.getElementById("diferenca").innerText = '';
+  }
 }
 
 // logout
@@ -283,7 +327,6 @@ function setMonthlyBudget() {
 function handleLogout() {
   const confirmation = confirm("Tem certeza que deseja desconectar?");
   if (confirmation) {
-    // localStorage.removeItem("transactions")
     window.location.href = "/src/pages/login/login.html";
   }
 }
