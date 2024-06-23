@@ -84,29 +84,55 @@ function calculateTotalValue(transacoes = transactions) {
   receitas.textContent = `R$${receitasSum.toFixed(2)}`;
 }
 
+// Filtro:
+
 function filterTransactions() {
   const filterSelect = document.getElementById("filterSelect");
   const filterOption = filterSelect.value;
 
   let filteredTransactions;
+
   if (filterOption === "all") {
-    filteredTransactions = transactions;
-  } else if (filterOption) {
-    filteredTransactions = transactions.filter((transaction) =>
-      transaction.tags.includes(filterOption)
-    );
+      filteredTransactions = transactions;
+  } else if (filterOption === "income") {
+      filteredTransactions = transactions.filter(transaction => transaction.value >= 0);
+  } else if (filterOption === "expenses") {
+      filteredTransactions = transactions.filter(transaction => transaction.value < 0);
   } else {
-    return;
+      // Filtra por tag específica
+      filteredTransactions = transactions.filter(transaction => transaction.tags.includes(filterOption));
   }
 
   displayTransactions(filteredTransactions);
   calculateTotalValue(filteredTransactions);
 }
 
+
 function getUniqueTags() {
   const allTags = transactions.flatMap((transaction) => transaction.tags);
   return Array.from(new Set(allTags));
 }
+
+function updateFilterOptions() {
+  const filterSelect = document.getElementById("filterSelect");
+  const uniqueTags = getUniqueTags();
+
+  // Remove todas as opções de tags específicas antes de adicionar novamente
+  filterSelect.innerHTML = `
+      <option value="all">Todas as transações</option>
+      <option value="income">Receitas</option>
+      <option value="expenses">Despesas</option>
+  `;
+
+  // Adiciona as opções de tags únicas
+  uniqueTags.forEach(tag => {
+      const option = document.createElement("option");
+      option.value = tag;
+      option.textContent = tag;
+      filterSelect.appendChild(option);
+  });
+}
+
 
 // POPUP DE TRANSACAO
 
@@ -279,4 +305,6 @@ document.addEventListener("DOMContentLoaded", () => {
   displayTransactions(transactions);
   // calcula o valor total das transacoes
   calculateTotalValue(transactions);
+  // atualiza os filtros
+  updateFilterOptions();
 });

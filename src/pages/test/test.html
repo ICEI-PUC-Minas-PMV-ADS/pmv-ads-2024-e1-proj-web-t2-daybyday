@@ -27,7 +27,17 @@
   </div>
   <div class="main-content">
     <div class="header">
-      <h1>Dashboard</h1>
+      <div class="header-title">
+        <h1>Dashboard</h1>
+        <div>
+          <label for="filterSelect">Filtro:</label>
+            <select id="filterSelect" onchange="filterTransactions()">
+                <option value="all">Todas as transações</option>
+                <option value="income">Receitas</option>
+                <option value="expenses">Despesas</option>
+            </select>
+        </div>
+      </div>
       <div class="sums-container">
         <div>
           <div class="card-content">

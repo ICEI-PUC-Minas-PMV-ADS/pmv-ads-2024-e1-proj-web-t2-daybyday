@@ -150,6 +150,12 @@ h1, h2, p {
   margin-bottom: 25px;
 }
 
+.header-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
 
 
 /* TABELA DE TRANSACAO */
