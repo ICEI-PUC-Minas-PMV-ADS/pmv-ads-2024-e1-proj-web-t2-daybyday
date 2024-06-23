@@ -19,7 +19,7 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><div onclick="toggleTrasactionPopup()">Adicionar transação</div></li>
-        <li><div onclick="toggleBudgetPopup()" id="setBudgetButton">Orçamento mensal</div></li>
+        <li><div onclick="toggleBudgetPopup()" id="setBudgetButton">Meta de economia</div></li>
       </ul>
     </div>
 
@@ -63,6 +63,18 @@
           </div>
           <div class="icon-wrapper">
             <img src="despesas.svg" alt="despesas.svg" class="card-icon"/>
+          </div>
+        </div>
+
+        <div>
+          <div class="card-content">
+            <div>
+              Meta de economia: <span id="economias">0</span>
+            </div>
+            <span id="diferenca"></span>
+          </div>
+          <div class="icon-wrapper">
+            <img src="economias.svg" alt="economias.svg" class="card-icon"/>
           </div>
         </div>
       </div>

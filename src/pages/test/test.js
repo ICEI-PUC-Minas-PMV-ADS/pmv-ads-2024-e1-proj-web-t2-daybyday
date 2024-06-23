@@ -77,11 +77,26 @@ function calculateTotalValue(transacoes = transactions) {
   // console de todos os valores
   console.log(positivos, negativos, saldoSum, despesasSum, receitasSum);
 
-  // let positiveTotal = saldoSum < monthlyGoal ? monthlyGoal - saldoSum : 0;
-  // let negativeTotal = saldoSum > monthlyGoal ? saldoSum - monthlyGoal : 0;
+  
   saldoAtual.textContent = `R$${saldoSum.toFixed(2)}`;
   despesas.textContent = `R$${despesasSum.toFixed(2)}`;
   receitas.textContent = `R$${receitasSum.toFixed(2)}`;
+
+  const metaDeEconomia = parseFloat(localStorage.getItem("monthlyBudget"));
+  document.getElementById("economias").innerText = `R$${metaDeEconomia.toFixed(2)}`;
+
+  if (!isNaN(metaDeEconomia)) {
+    var diferenca = saldoSum - metaDeEconomia;
+    var textoDiferenca = `Saldo: ${(diferenca >= 0 ? "+" : "-")} R$${Math.abs(diferenca).toFixed(2)}`
+    document.getElementById("diferenca").innerText = textoDiferenca;
+    document.getElementById("diferenca").style.color =
+      diferenca >= 0 ? "green" : "red";
+
+    if (saldoSum > metaDeEconomia && !alertActivated) {
+      alert("O total de suas transações excede o limite de gastos mensal!");
+      alertActivated = true;
+    }
+  }
 }
 
 // Filtro:
@@ -230,28 +245,6 @@ function addTransaction() {
   // roda a funcao do que deve ser mostrado na tabela
   displayTransactions(transactions);
   calculateTotalValue();
-
-  const totalValue = transactions.reduce(
-    (total, transaction) => total + transaction.value,
-    0
-  );
-
-  const monthlyBudget = parseFloat(localStorage.getItem("monthlyBudget"));
-  if (!isNaN(monthlyBudget)) {
-    var goalDifference = monthlyBudget - totalValue;
-    var differenceText =
-      "Diferença: " +
-      (goalDifference >= 0 ? "+" : "-") +
-      Math.abs(goalDifference);
-    document.getElementById("goalDifference").innerText = differenceText;
-    document.getElementById("goalDifference").style.color =
-      goalDifference >= 0 ? "green" : "red";
-
-    if (totalValue > monthlyBudget && !alertActivated) {
-      alert("O total de suas transações excede o limite de gastos mensal!");
-      alertActivated = true;
-    }
-  }
 
   nameInput.value = "";
   valueInput.value = "";

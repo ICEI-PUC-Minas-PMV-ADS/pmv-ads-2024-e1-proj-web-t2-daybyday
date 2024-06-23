@@ -126,6 +126,11 @@ h1, h2, p {
   color: black;
 }
 
+#economias {
+  font-size: large;
+  color: grey;
+}
+
 .card-icon {
   width: 50px;
 }
