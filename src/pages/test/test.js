@@ -43,7 +43,7 @@ function displayTransactions() {
 function calculateTotalValue(transacoes = transactions) {
   // define os elementos que serao alterados
   const saldoAtual = document.getElementById("saldoAtual");
-  const despesas = document.getElementById("desepesas");
+  const despesas = document.getElementById("despesas");
   const receitas = document.getElementById("receitas");
   const monthlyGoal = parseFloat(localStorage.getItem("monthlyBudget"));
   
