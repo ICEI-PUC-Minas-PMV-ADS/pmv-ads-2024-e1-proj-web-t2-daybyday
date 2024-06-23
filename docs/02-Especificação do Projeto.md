@@ -138,7 +138,7 @@
     </tr>
     <tr>
         <td>RF-10 </td>
-        <td>A aplicação deve permitir personalizar metas financeiras. </td>
+        <td>A aplicação deve permitir filtrar as transações por tag </td>
         <td>BAIXA</td>
     </tr>
 </table>
