@@ -11,9 +11,7 @@
 <body>
   <div class="sidebar">
     <div>
-      <div class="sidebar-header">
-        <img src="logoName.png" alt="logo.png" class="logo" />
-      </div>
+      <img src="logoName.png" alt="logo.png" class="logo" />
       <ul class="sidebar-menu">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
@@ -22,15 +20,15 @@
       </ul>
     </div>
 
-    <button type="button" class="logout" id="logout-btn">Logout</button>
+    <button type="button" class="logout" onClick="handleLogout()">Logout</button>
   </div>
   <div class="main-content">
     <div class="header">
       <h1>Dashboard</h1>
       <div class="sums-container">
-        <div>Valor total : <span id="totalValue">0</span></div>
-        <div>Saldo negativo total: <span id="negativeTotal">0</span></div>
-        <div>Saldo positivo total: <span id="positiveTotal">0</span></div>
+        <div>Saldo atual: <span id="saldoAtual">0</span></div>
+        <div>Receitas: <span id="receitas">0</span></div>
+        <div>Despesas: <span id="desepesas">0</span></div>
       </div>
     </div>
 
