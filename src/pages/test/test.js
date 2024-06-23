@@ -46,7 +46,7 @@ function calculateTotalValue(transacoes = transactions) {
   const despesas = document.getElementById("despesas");
   const receitas = document.getElementById("receitas");
   const monthlyGoal = parseFloat(localStorage.getItem("monthlyBudget"));
-  
+
   let positivos = [];
   let negativos = [];
   let saldoSum = 0;
@@ -60,7 +60,6 @@ function calculateTotalValue(transacoes = transactions) {
       negativos.push(transaction.value);
     }
   });
-
 
   // soma o valor de todas as transacoes
   transacoes.forEach((transaction) => {
@@ -78,7 +77,6 @@ function calculateTotalValue(transacoes = transactions) {
   // console de todos os valores
   console.log(positivos, negativos, saldoSum, despesasSum, receitasSum);
 
-  
   // let positiveTotal = saldoSum < monthlyGoal ? monthlyGoal - saldoSum : 0;
   // let negativeTotal = saldoSum > monthlyGoal ? saldoSum - monthlyGoal : 0;
   saldoAtual.textContent = `R$${saldoSum.toFixed(2)}`;
@@ -111,6 +109,7 @@ function getUniqueTags() {
 }
 
 // POPUP DE TRANSACAO
+
 function toggleTrasactionPopup() {
   // acha o popup
   const popup = document.getElementById("transaction-popup");
@@ -121,11 +120,44 @@ function toggleTrasactionPopup() {
 // trasacaoes
 
 function editTransaction(index) {
-  console.log('test de edit')
+  editedIndex = index;
+
+  // Acha a transacao baseada no index
+  const transactionToEdit = transactions[index];
+
+  // pega os valores da transacao e coloca nos inputs
+  const nameInput = document.getElementById("transactionName");
+  const valueInput = document.getElementById("transactionValue");
+  const tagsInput = document.getElementById("transactionTags");
+  const monthlyBillCheckbox = document.getElementById("monthlyBill");
+
+  nameInput.value = transactionToEdit.name;
+  valueInput.value = transactionToEdit.value;
+  tagsInput.value = transactionToEdit.tags;
+  monthlyBillCheckbox.checked = transactionToEdit.isMonthly;
+
+  // abre o popup pra edicao
+  toggleTrasactionPopup();
 }
 
 function deleteTransaction(index) {
-  console.log('test de delete')
+  // Confirma a exclusão com o usuário
+  const confirmation = confirm(
+    "Tem certeza que deseja deletar esta transação?"
+  );
+  if (!confirmation) {
+    return; // para caso o usuario cancelar
+  }
+
+  // Remove a transação do array transactions
+  transactions.splice(index, 1);
+
+  // Atualiza o localStorage com o array de transações modificado
+  localStorage.setItem("transactions", JSON.stringify(transactions));
+
+  // Atualiza a tabela de transações e os valores totais
+  displayTransactions(transactions);
+  calculateTotalValue();
 }
 
 function addTransaction() {
@@ -163,7 +195,7 @@ function addTransaction() {
     transactions.push(newTransaction);
   } else {
     transactions[editedIndex] = newTransaction;
-    editedIndex = -1;
+    editedIndex = -1; // Reset editedIndex after editing
   }
 
   // joga o array de transacoes pro local storage
@@ -177,7 +209,7 @@ function addTransaction() {
     (total, transaction) => total + transaction.value,
     0
   );
-  
+
   const monthlyBudget = parseFloat(localStorage.getItem("monthlyBudget"));
   if (!isNaN(monthlyBudget)) {
     var goalDifference = monthlyBudget - totalValue;
@@ -216,7 +248,7 @@ function toggleBudgetPopup() {
 function setMonthlyBudget() {
   // acha o input de orcamento mensal
   const monthlyBudget = document.getElementById("monthlyBudget").value;
-  // joga pro local 
+  // joga pro local
   localStorage.setItem("monthlyBudget", monthlyBudget);
   // insere texto no campo de monthlyGoal
   document.getElementById("monthlyGoal").innerText =
@@ -241,9 +273,8 @@ function handleLogout() {
 // ele vai popular a tabela com os valores do local storage
 document.addEventListener("DOMContentLoaded", () => {
   // busca as informacoes do local storage
-  let storedTransactions = localStorage.getItem('transactions');
-  console.log(typeof JSON.parse(storedTransactions), 'stored')
-  let transactions = storedTransactions ? JSON.parse(storedTransactions) : [];
+  let storedTransactions = localStorage.getItem("transactions");
+  transactions = storedTransactions ? JSON.parse(storedTransactions) : [];
   // mostra as informacoes na tabela
   displayTransactions(transactions);
   // calcula o valor total das transacoes
