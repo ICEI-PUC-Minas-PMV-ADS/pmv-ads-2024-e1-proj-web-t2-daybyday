@@ -2,16 +2,16 @@ let transactions = [];
 let editedIndex = -1;
 let alertActivated = false;
 
-function deleteTransaction(index) {
-  transactions.splice(index, 1);
-  displayTransactions();
-  calculateTotalValue();
-  // updateFilterOptions();
+function playClickSound() {
+  // acha o som de click
+  const clickSound = document.getElementById("clickSound");
+  // toca o som
+  clickSound.play();
 }
 
-function displayTransactions() {
+function displayTransactions(displayedTransactions) {
   // define quais serao as transacoes mostradas
-  const transactionsToShow = transactions;
+  const transactionsToShow = displayedTransactions;
   // acha o elemento da tabela
   const transactionList = document.getElementById("transactionList");
   transactionList.innerHTML = "";
@@ -110,60 +110,7 @@ function getUniqueTags() {
   return Array.from(new Set(allTags));
 }
 
-document
-  .getElementById("logout-btn")
-  .addEventListener("click", function (event) {
-    console.log('rodei')
-    event.preventDefault();
-    const confirmation = confirm("Tem certeza que deseja desconectar?");
-    if (confirmation) {
-      localStorage.clear();
-      window.location.href = "/src/pages/login/login.html";
-    }
-  });
-
-document
-  .getElementById("setBudgetButton")
-  .addEventListener("click", function () {
-    document.getElementById("budgetModal").style.display = "block";
-  });
-
-function closeModal() {
-  document.getElementById("budgetModal").style.display = "none";
-  document.getElementById("setBudgetButton").style.display = "block";
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const monthlyBudget = localStorage.getItem("monthlyBudget");
-  if (monthlyBudget) {
-    document.getElementById(
-      "monthlyGoal"
-    ).textContent = `Limite de gastos mensal: ${monthlyBudget}`;
-  } else {
-    document.getElementById("monthlyGoal").textContent =
-      "Sem limite de gastos mensal";
-  }
-});
-
-
-
-// FILTROS
-
-document.addEventListener("click", function (event) {
-  const filterSelect = document.getElementById("filterSelect");
-  const filterButton = document.getElementById("filter-btn");
-  if (event.target !== filterSelect && event.target !== filterButton) {
-    filterSelect.style.display = "none";
-  }
-});
-
-document.getElementById("filter-btn").addEventListener("click", function () {
-  // Troca o estilo de display para abrir e fechar o filtros
-  document.getElementById("filterSelect").style.display = "block";
-});
-
 // POPUP DE TRANSACAO
-
 function toggleTrasactionPopup() {
   // acha o popup
   const popup = document.getElementById("transaction-popup");
@@ -171,25 +118,14 @@ function toggleTrasactionPopup() {
   popup.style.display = popup.style.display === "none" ? "flex" : "none";
 }
 
+// trasacaoes
+
 function editTransaction(index) {
-  const transaction = transactions[index];
-  const nameInput = document.getElementById("transactionName");
-  const valueInput = document.getElementById("transactionValue");
-  const tagsInput = document.getElementById("transactionTags");
-
-  nameInput.value = transaction.name;
-  valueInput.value = transaction.value;
-  tagsInput.value = transaction.tags.join(", ");
-  editedIndex = index;
-
-  toggleTrasactionPopup();
+  console.log('test de edit')
 }
 
-function playClickSound() {
-  // acha o som de click
-  const clickSound = document.getElementById("clickSound");
-  // toca o som
-  clickSound.play();
+function deleteTransaction(index) {
+  console.log('test de delete')
 }
 
 function addTransaction() {
@@ -234,13 +170,14 @@ function addTransaction() {
   localStorage.setItem("transactions", JSON.stringify(transactions));
 
   // roda a funcao do que deve ser mostrado na tabela
-  displayTransactions();
+  displayTransactions(transactions);
   calculateTotalValue();
 
   const totalValue = transactions.reduce(
     (total, transaction) => total + transaction.value,
     0
   );
+  
   const monthlyBudget = parseFloat(localStorage.getItem("monthlyBudget"));
   if (!isNaN(monthlyBudget)) {
     var goalDifference = monthlyBudget - totalValue;
@@ -295,6 +232,20 @@ function setMonthlyBudget() {
 function handleLogout() {
   const confirmation = confirm("Tem certeza que deseja desconectar?");
   if (confirmation) {
+    // localStorage.removeItem("transactions")
     window.location.href = "/src/pages/login/login.html";
   }
 }
+
+// esse addEventListener é para quando a pagina carregar
+// ele vai popular a tabela com os valores do local storage
+document.addEventListener("DOMContentLoaded", () => {
+  // busca as informacoes do local storage
+  let storedTransactions = localStorage.getItem('transactions');
+  console.log(typeof JSON.parse(storedTransactions), 'stored')
+  let transactions = storedTransactions ? JSON.parse(storedTransactions) : [];
+  // mostra as informacoes na tabela
+  displayTransactions(transactions);
+  // calcula o valor total das transacoes
+  calculateTotalValue(transactions);
+});
