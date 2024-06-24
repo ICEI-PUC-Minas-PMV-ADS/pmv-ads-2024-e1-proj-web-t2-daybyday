@@ -385,7 +385,8 @@ function clearMonthlyBudget() {
 function handleLogout() {
   const confirmation = confirm("Tem certeza que deseja desconectar?");
   if (confirmation) {
-    window.location.href = "/src/pages/login/login.html";
+    window.location.href = "/src";
+    localStorage.removeItem("lastInsertedBillDueDate");
   }
 }
 
