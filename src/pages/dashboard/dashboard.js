@@ -88,13 +88,6 @@ function calculateTotalValue(transacoes = transactions) {
     document.getElementById("diferenca").innerText = textoDiferenca;
     document.getElementById("diferenca").style.color =
       diferenca >= 0 ? "green" : "red";
-
-    if (diferenca < 0 && !alertActivated) {
-      alert(
-        "O total de suas transações excede o limite de gastos mensal para se atingir a meta!"
-      );
-      alertActivated = true;
-    }
   }
 }
 
@@ -413,7 +406,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function checkBillDueDatesOnLogin() {
   const dueDateStr = localStorage.getItem("lastInsertedBillDueDate");
   if (!dueDateStr) {
-    console.log("No due date found in local storage.");
     return;
   }
 
