@@ -31,6 +31,7 @@ function addTransaction() {
 
   if (editedIndex === -1) {
     transactions.push(newTransaction);
+    document.getElementById("addTransaction").innerText = "Editar Transação";
   } else {
     transactions[editedIndex] = newTransaction;
     editedIndex = -1;
