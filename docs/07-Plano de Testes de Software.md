@@ -66,8 +66,8 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
     <li>Visualizar a página Home.</li>
     <li>Após entrar ser redirecionado para a pagina dashboard</li>
     <li>Adicionar transações financeiras e categorizá-las</li>
-    <li>Editar e deletar alguma transação financeira</li>
     <li>Cadastrar uma conta a pagar</li>
+    <li>Editar e deletar alguma transação financeira</li>
     <li>Filtrar alguma transação por tag</li>
    </ol>
    </td>
