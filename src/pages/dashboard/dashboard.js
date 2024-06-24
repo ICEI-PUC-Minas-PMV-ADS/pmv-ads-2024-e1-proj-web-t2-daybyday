@@ -323,7 +323,7 @@ function addBill() {
   // Define automaticamente como uma conta mensal
   var newBill = {
     name: name,
-    value: value,
+    value: -value,
     tags: "Conta mensal - Data de vencimento: " + dueDate,
     dueDate: dueDate, // Armazena a data de vencimento ou qualquer outra informação específica da conta
   };
