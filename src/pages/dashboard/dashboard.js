@@ -432,14 +432,7 @@ function checkBillDueDatesOnLogin() {
 
 function onLoad() {
   // busca as informacoes do local storage
-  let storedTransactions = localStorage.getItem("transactions");
-  transactions = storedTransactions ? JSON.parse(storedTransactions) : [];
-  // mostra as informacoes na tabela
-  displayTransactions(transactions);
-  // calcula o valor total das transacoes
-  calculateTotalValue(transactions);
-  // atualiza os filtros
-  updateFilterOptions();
+
   checkBillDueDatesOnLogin();
 }
 
