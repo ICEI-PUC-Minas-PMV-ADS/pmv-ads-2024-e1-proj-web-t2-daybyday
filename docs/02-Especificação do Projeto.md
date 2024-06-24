@@ -133,12 +133,12 @@
     </tr>
     <tr>
         <td>RF-09 </td>
-        <td>A aplicação deve permitir receber alertas de conta próximas do vencimento/vencidas. </td>
+        <td>A aplicação deve permitir editar e deletar transações ativas </td>
         <td>MÉDIA</td>
     </tr>
     <tr>
         <td>RF-10 </td>
-        <td>A aplicação deve permitir personalizar metas financeiras. </td>
+        <td>A aplicação deve permitir filtrar as transações por tag </td>
         <td>BAIXA</td>
     </tr>
 </table>

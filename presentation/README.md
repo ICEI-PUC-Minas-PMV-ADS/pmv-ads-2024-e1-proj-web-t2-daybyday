@@ -1,3 +1,7 @@
 # Apresentação da Solução
 
-Faça uma apresentação de um resumo de todos o processo de desenvolvimento e no final apresente a solução desenvolvida, usando um pequeno vídeo.
+## Apresentação dos slides: 
+
+[Projeto DBD - DayByDay.pdf](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-e1-proj-web-t2-daybyday/blob/main/Projeto%20DBD%20-%20DayByDay.pdf)
+
+## Hospedagem:
