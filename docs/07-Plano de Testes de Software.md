@@ -100,10 +100,9 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
     <li>Informar o endereço do site.</li>
     <li>Visualizar a página Home.</li>
     <li>Após entrar ser redirecionado para a pagina dashboard</li>
-    <li>Definir uma meta mensal</li>
-    <li>Adicionar gastos</li>
-    <li>Editar gastos</li>
-    <li>Filtrar gastos por descrição</li>
+    <li>Adicionar uma conta com vencimento no mesmo dia</li>
+    <li>Atualizar a página</li>
+    <li>Visualizar o alerta</li>
    </ol>
    </td>
   <td>Deve receber o alertar personalizado de acordo com o orçamento mensal.</td>
