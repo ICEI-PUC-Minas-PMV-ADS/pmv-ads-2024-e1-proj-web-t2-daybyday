@@ -247,3 +247,16 @@ function playClickSound() {
   var clickSound = document.getElementById("clickSound");
   clickSound.play();
 }
+
+document
+  .querySelectorAll('button')
+  .forEach(button => {
+    button.addEventListener('click', function(event) {
+      let btnAddTransactionId = "btnAddTransactionToggle";
+      if(event.target.id === btnAddTransactionId){
+        document.getElementById("toggleBtnText").innerText = "Adicionar Transação";
+      } else {
+        document.getElementById("toggleBtnText").innerText = "Editar Transação";
+      }
+    });
+});

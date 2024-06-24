@@ -36,11 +36,11 @@
         </div>
       </div>
       <div class="header">
-        <h2>Transações financeiras</h2>
+        <h2>Transações Financeiras</h2>
         <div>
-          <button onclick="togglePopup()">Adicionar transição</button>
+          <button onclick="togglePopup()" id="btnAddTransactionToggle">Adicionar transação</button>
           <select id="filterSelect" class="filterSelect">
-            <option value="all">Todas as transições</option>
+            <option value="all">Todas as transações</option>
           </select>
           <button id="filter-btn" onclick="filterTransactions()">Filtro</button>
         </div>
@@ -83,7 +83,7 @@
         <input type="checkbox" id="monthlyBill" />
         <label for="monthlyBill">Conta mensal</label>
       </div>
-      <button onclick="addTransaction()">Adicionar Transação</button>
+      <button onclick="addTransaction()" id="toggleBtnText">Adicionar Transação</button>
     </div>
 
     <script src="dashboardscript.js"></script>
