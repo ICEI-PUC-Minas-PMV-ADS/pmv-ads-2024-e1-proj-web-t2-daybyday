@@ -317,6 +317,9 @@ function addBill() {
     return;
   }
 
+  // Salva a dueDate no localStorage
+  localStorage.setItem("lastInsertedBillDueDate", dueDate);
+
   // Define automaticamente como uma conta mensal
   var newBill = {
     name: name,
@@ -406,3 +409,40 @@ document.addEventListener("DOMContentLoaded", () => {
   // atualiza os filtros
   updateFilterOptions();
 });
+
+function checkBillDueDatesOnLogin() {
+  const dueDateStr = localStorage.getItem("lastInsertedBillDueDate");
+  if (!dueDateStr) {
+    console.log("No due date found in local storage.");
+    return;
+  }
+
+  const [day, month, year] = dueDateStr
+    .split("/")
+    .map((part) => parseInt(part, 10));
+  const dueDate = new Date(year, month - 1, day);
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  if (dueDate.getTime() === today.getTime()) {
+    alert("O prazo para sua conta vai vencer hoje.");
+  }
+}
+
+function onLoad() {
+  // busca as informacoes do local storage
+  let storedTransactions = localStorage.getItem("transactions");
+  transactions = storedTransactions ? JSON.parse(storedTransactions) : [];
+  // mostra as informacoes na tabela
+  displayTransactions(transactions);
+  // calcula o valor total das transacoes
+  calculateTotalValue(transactions);
+  // atualiza os filtros
+  updateFilterOptions();
+  checkBillDueDatesOnLogin();
+}
+
+// esse addEventListener é para quando a pagina carregar
+// ele vai popular a tabela com os valores do local storage
+document.addEventListener("DOMContentLoaded", onLoad);
