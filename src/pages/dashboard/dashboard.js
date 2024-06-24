@@ -28,8 +28,8 @@ function displayTransactions(displayedTransactions) {
             <td class="tableText-name">
                 ${displayName}
                 <div>
-                    <button onclick="editTransaction(${index})">Editar</button>
-                    <button onclick="deleteTransaction(${index})">Deletar</button>
+                    <button class="editTransaction" onclick="editTransaction(${index})">Editar</button>
+                    <button  class="deleteTransaction" onclick="deleteTransaction(${index})">Deletar</button>
                 </div>
             </td>
             <td class="tableText">${transaction.value}</td>
@@ -79,9 +79,9 @@ function calculateTotalValue(transacoes = transactions) {
   receitas.textContent = `R$${receitasSum.toFixed(2)}`;
 
   const metaDeEconomia = parseFloat(localStorage.getItem("monthlyBudget"));
-  document.getElementById("economias").innerText = metaDeEconomia ? `R$${metaDeEconomia.toFixed(
-    2
-  )}` : "Não definida";
+  document.getElementById("economias").innerText = metaDeEconomia
+    ? `R$${metaDeEconomia.toFixed(2)}`
+    : "Não definida";
 
   if (!isNaN(metaDeEconomia)) {
     var diferenca = saldoSum - metaDeEconomia;
@@ -310,7 +310,7 @@ function clearMonthlyBudget() {
   const confirmacaoDeLimpeza = confirm(
     "Tem certeza que deseja limpar a meta de economia?"
   );
-  
+
   if (confirmacaoDeLimpeza) {
     // remove o orcamento mensal do local storage
     localStorage.removeItem("monthlyBudget");
@@ -318,7 +318,7 @@ function clearMonthlyBudget() {
     alert("Meta de economia mensal removida.");
     // calcula os dados novamente sem a meta
     calculateTotalValue();
-    document.getElementById("diferenca").innerText = '';
+    document.getElementById("diferenca").innerText = "";
   }
 }
 
