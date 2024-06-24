@@ -385,7 +385,7 @@ function clearMonthlyBudget() {
 function handleLogout() {
   const confirmation = confirm("Tem certeza que deseja desconectar?");
   if (confirmation) {
-    window.location.href = "/src";
+    window.location.href = "/pmv-ads-2024-e1-proj-web-t2-daybyday/src/";
     localStorage.removeItem("lastInsertedBillDueDate");
   }
 }
