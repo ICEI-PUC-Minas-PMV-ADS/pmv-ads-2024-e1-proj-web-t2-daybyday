@@ -431,8 +431,6 @@ function checkBillDueDatesOnLogin() {
 }
 
 function onLoad() {
-  // busca as informacoes do local storage
-
   checkBillDueDatesOnLogin();
 }
 
