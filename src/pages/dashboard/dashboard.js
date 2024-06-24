@@ -179,6 +179,7 @@ function editTransaction(index) {
 
   // abre o popup pra edicao
   toggleTrasactionPopup();
+  document.getElementById("toggleBtn").innerText = "Editar Transação"
 }
 
 function deleteTransaction(index) {
@@ -269,6 +270,7 @@ function addTransaction() {
   // updateFilterOptions();
   toggleTrasactionPopup();
   playClickSound();
+  document.getElementById("toggleBtn").innerText = "Adicionar Transação"
 }
 
 function addBill() {
@@ -385,7 +387,7 @@ function clearMonthlyBudget() {
 function handleLogout() {
   const confirmation = confirm("Tem certeza que deseja desconectar?");
   if (confirmation) {
-    window.location.href = "/pmv-ads-2024-e1-proj-web-t2-daybyday/src/";
+    window.location.href = "/src/index.html";
     localStorage.removeItem("lastInsertedBillDueDate");
   }
 }
