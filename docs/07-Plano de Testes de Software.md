@@ -59,6 +59,40 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
     <li>RF-10:	A aplicação deve permitir personalizar metas financeiras.</li>
    </ul>
   </td>
+  <td>Verificar se recebeu alerta.</td>
+  <td>
+   <ol>
+    <li>Acessar o navegador.</li>
+    <li>Informar o endereço do site.</li>
+    <li>Visualizar a página Home.</li>
+    <li>Após entrar ser redirecionado para a pagina dashboard</li>
+    <li>Definir uma meta mensal</li>
+    <li>Adicionar gastos</li>
+    <li>Editar gastos</li>
+    <li>Filtrar gastos por descrição</li>
+   </ol>
+   </td>
+  <td>Deve permitir acessar o dashboard e fazer as funcionalidades descritas.</td>
+  <td>Rafael</td>
+ </tr>
+</table>
+
+<table>
+ <tr>
+  <th>Caso de teste</th>
+  <th>Requisitos associados</th>
+  <th>Objetivo do teste</th>
+  <th>Passos</th>
+  <th>Critérios de êxito</th>
+  <th>Responsável</th>
+ </tr>
+ <tr>
+  <td>CT-03: Verificar o recebimento de alertas personalizados com o orçamento mensal.</td>
+  <td>
+   <ul>
+    <li>RF-06:	A aplicação deve permitir receber alertas personalizados com o orçamento mensal.</li>
+   </ul>
+  </td>
   <td>Verificar se o dashboard está funcionando corretamente.</td>
   <td>
    <ol>
@@ -70,10 +104,10 @@ Os testes funcionais a serem realizados na aplicação são descritos a seguir.
     <li>Adicionar gastos</li>
     <li>Editar gastos</li>
     <li>Filtrar gastos por descrição</li>
-
    </ol>
    </td>
-  <td>Deve permitir acessar o dashboard e fazer as funcionalidades descritas.</td>
+  <td>Deve receber o alertar personalizado de acordo com o orçamento mensal.</td>
   <td>Rafael</td>
  </tr>
 </table>
+
