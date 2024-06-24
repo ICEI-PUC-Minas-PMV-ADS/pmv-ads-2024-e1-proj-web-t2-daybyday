@@ -20,16 +20,14 @@ function displayTransactions(displayedTransactions) {
     // cria a linha da tabela
     const row = document.createElement("tr");
     // define o nome da transacao
-    const displayName = transaction.isMonthly
-      ? `Mensal - ${transaction.name}`
-      : transaction.name;
+    const displayName = transaction.name;
     // define o codigo da tabela - linha com o nome, valor e tags, além dos botoes de editar e deletar
     row.innerHTML = `
             <td class="tableText-name">
                 ${displayName}
                 <div>
                     <button class="editTransaction" onclick="editTransaction(${index})">Editar</button>
-                    <button  class="deleteTransaction" onclick="deleteTransaction(${index})">Deletar</button>
+                    <button class="deleteTransaction" onclick="deleteTransaction(${index})">Deletar</button>
                 </div>
             </td>
             <td class="tableText">${transaction.value}</td>
@@ -45,7 +43,6 @@ function calculateTotalValue(transacoes = transactions) {
   const saldoAtual = document.getElementById("saldoAtual");
   const despesas = document.getElementById("despesas");
   const receitas = document.getElementById("receitas");
-  const monthlyGoal = parseFloat(localStorage.getItem("monthlyBudget"));
 
   let positivos = [];
   let negativos = [];
@@ -164,6 +161,12 @@ function toggleTrasactionPopup() {
   popup.style.display = popup.style.display === "none" ? "flex" : "none";
 }
 
+function toggleMonthlyBillPopup() {
+  const popup = document.getElementById("monthly-bill-popup");
+  // troca o estilo de display para abrir e fechar o popup
+  popup.style.display = popup.style.display === "none" ? "flex" : "none";
+}
+
 // trasacaoes
 
 function editTransaction(index) {
@@ -176,12 +179,10 @@ function editTransaction(index) {
   const nameInput = document.getElementById("transactionName");
   const valueInput = document.getElementById("transactionValue");
   const tagsInput = document.getElementById("transactionTags");
-  const monthlyBillCheckbox = document.getElementById("monthlyBill");
 
   nameInput.value = transactionToEdit.name;
   valueInput.value = transactionToEdit.value;
   tagsInput.value = transactionToEdit.tags;
-  monthlyBillCheckbox.checked = transactionToEdit.isMonthly;
 
   // abre o popup pra edicao
   toggleTrasactionPopup();
@@ -246,15 +247,11 @@ function addTransaction() {
     return;
   }
 
-  // verifica se é uma conta mensal
-  var isMonthlyBill = document.getElementById("monthlyBill").checked;
-
   // cria um objeto com os valores da transacao
   var newTransaction = {
     name: name,
     value: value,
     tags: tags,
-    isMonthly: isMonthlyBill,
   };
 
   // se o index de edicao for -1, adiciona a transacao, se nao, edita a transacao
@@ -281,6 +278,71 @@ function addTransaction() {
   playClickSound();
 }
 
+function addBill() {
+  // Assume a mesma estrutura para contas: nome, valor e tags
+  const nameInput = document.getElementById("billName");
+  const valueInput = document.getElementById("billValue");
+  const dueDateInput = document.getElementById("billDueDate");
+
+  const name = nameInput.value;
+  const value = parseFloat(valueInput.value);
+  const dueDate = dueDateInput.value;
+
+  // Validação básica
+  if (!name || isNaN(value) || !dueDate) {
+    alert("Por favor, preencha todos os campos corretamente.");
+    return;
+  }
+
+  const dateFormatRegex = /^\d{2}\/\d{2}\/\d{4}$/;
+
+  // Verifica se dueDate corresponde ao formato
+  if (!dateFormatRegex.test(dueDate)) {
+    alert("Por favor, insira a data no formato correto: DD/MM/AAAA.");
+    return;
+  }
+
+  const [day, month, year] = dueDate
+    .split("/")
+    .map((part) => parseInt(part, 10));
+  const dueDateObj = new Date(year, month - 1, day); // Os meses são indexados a partir de 0 em JavaScript Date
+
+  // Cria um novo objeto Date para o dia atual
+  const today = new Date();
+  today.setHours(0, 0, 0, 0); // Reseta horas, minutos, segundos e milissegundos
+
+  // Verifica se dueDate é anterior ao dia atual
+  if (dueDateObj < today) {
+    alert("A data não pode ser anterior ao dia atual.");
+    return;
+  }
+
+  // Define automaticamente como uma conta mensal
+  var newBill = {
+    name: name,
+    value: value,
+    tags: "Conta mensal - Data de vencimento: " + dueDate,
+    dueDate: dueDate, // Armazena a data de vencimento ou qualquer outra informação específica da conta
+  };
+
+  // Adiciona a nova conta ao array de transações
+  transactions.push(newBill);
+
+  // Atualiza o armazenamento local
+  localStorage.setItem("transactions", JSON.stringify(transactions));
+
+  // Atualiza a tabela
+  displayTransactions(transactions, (isBill = true));
+  calculateTotalValue();
+
+  // Limpa os inputs
+  nameInput.value = "";
+  valueInput.value = "";
+  dueDateInput.value = "";
+
+  toggleMonthlyBillPopup();
+  playClickSound();
+}
 // POPUP DE ORCAMENTO
 
 function toggleBudgetPopup() {

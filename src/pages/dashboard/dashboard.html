@@ -18,6 +18,7 @@
       <ul class="sidebar-menu">
         <li><a href="#">Home</a></li>
         <li><div onclick="toggleTrasactionPopup()">Adicionar transação</div></li>
+        <li><div onclick="toggleMonthlyBillPopup()">Adicionar conta</div></li>
         <li><div onclick="toggleBudgetPopup()" id="setBudgetButton">Meta de economia</div></li>
         <li><div onclick="clearAllTransactions()">Limpar Transações</div></li>
         <li><div onclick="clearMonthlyBudget()">Limpar meta de economia</div></li>
@@ -105,11 +106,22 @@
       <input type="text" id="transactionTags" placeholder="Descrição da transação" />
     </div>
     <div class="footer">
-      <div class="monthlyBill">
-        <input class="monthlyBill" type="checkbox" id="monthlyBill" />
-        <label class="monthlyBill" for="monthlyBill">Conta mensal</label>
-      </div>
       <button class="addTransaction" onclick="addTransaction()">Adicionar Transação</button>
+    </div>
+  </div>
+  
+  <div id="monthly-bill-popup" class="popup" style="display: none">
+    <div class="header">
+      <h3 class="h3Modal">Detalhes da Conta Mensal</h3>
+      <button class="close-btn" onclick="toggleMonthlyBillPopup()">X</button>
+    </div>
+    <div class="inputs-container">
+      <input type="text" id="billName" placeholder="Nome da conta" />
+      <input type="number" id="billValue" placeholder="Valor da conta" />
+      <input type="text" id="billDueDate" placeholder="Data de vencimento" />
+    </div>
+    <div class="footer">
+      <button class="addBill" onclick="addBill()">Adicionar Conta Mensal</button>
     </div>
   </div>
 

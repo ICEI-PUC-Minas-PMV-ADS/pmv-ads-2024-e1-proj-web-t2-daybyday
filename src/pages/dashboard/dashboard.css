@@ -265,12 +265,14 @@ td {
   cursor: pointer;
 }
 
-.monthlyBill {
-  cursor: pointer;
-}
-
 .addTransaction {
   cursor: pointer;
+  margin-left: auto;
+}
+
+.addBill {
+  cursor: pointer;
+  margin-left: auto;
 }
 
 .editTransaction {
